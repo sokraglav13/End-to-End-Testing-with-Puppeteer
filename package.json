@@ -14,5 +14,8 @@
     "puppeteer": "^23.0.2",
     "puppeteer-screen-recorder": "^3.0.3",
     "winston": "^3.14.1"
+  },
+  "devDependencies": {
+    "mocha": "^10.7.3"
   }
 }

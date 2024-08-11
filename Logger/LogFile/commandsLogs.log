@@ -179,3 +179,22 @@
 2024-08-11 14:16:06 info: Get the error
 2024-08-11 14:16:06 info: Browser Closed
 2024-08-11 14:16:06 info: ------------------- TEST EXECUTION FINISHED FOR Test-1 ------------------
+2024-08-11 14:26:11 info: ------------------- TEST EXECUTION STARTED FOR Test-1 -------------------
+2024-08-11 14:26:13 info: Browser launched successfully
+2024-08-11 14:26:15 info: Open url
+2024-08-11 14:26:15 info: Fullscreen size set
+2024-08-11 14:26:18 info: Login action
+2024-08-11 14:26:19 info: Click on Add to Cart button for Backpack Item
+2024-08-11 14:26:20 info: Click on Cart button
+2024-08-11 14:27:32 info: ------------------- TEST EXECUTION STARTED FOR Test-1 -------------------
+2024-08-11 14:27:33 info: Browser launched successfully
+2024-08-11 14:27:36 info: Open url
+2024-08-11 14:27:36 info: Fullscreen size set
+2024-08-11 14:27:39 info: Login action
+2024-08-11 14:27:40 info: Click on Add to Cart button for Backpack Item
+2024-08-11 14:27:40 info: Click on Cart button
+2024-08-11 14:27:41 info: Click on Checkout button
+2024-08-11 14:27:41 info: Click on Continue button in Checkout
+2024-08-11 14:27:42 info: Get the error
+2024-08-11 14:27:42 info: Browser Closed
+2024-08-11 14:27:42 info: ------------------- TEST EXECUTION FINISHED FOR Test-1 ------------------
