@@ -1,5 +1,3 @@
-const isCI = process.env.CI === 'true';
-
 module.exports = {
     /**Sets the base url for testing */
     baseUrl: "https://www.saucedemo.com/",
@@ -12,7 +10,7 @@ module.exports = {
 
     /**Sets the browser options */
     browserConfigurations: {
-        executablePath: isCI ? '/usr/bin/google-chrome-stable' : 'C:/testBrowsers/Chrome_V119.0.6045.105/chrome.exe',
+        executablePath: 'C:/testBrowsers/Chrome_V119.0.6045.105/chrome.exe',
         headless: false,
         slowMo: 20,
         args: [
