@@ -27,15 +27,19 @@ class Logger {
     }
 
     startLoggin(testName) {
-        this.#_logger.info(`------------------- TEST EXECUTION STARTED FOR ${testName} -------------------`)
+        this.#_logger.info(`------------------- TEST EXECUTION STARTED FOR ${testName} -------------------`);
     }
 
     endLoggin(testName) {
-        this.#_logger.info(`------------------- TEST EXECUTION FINISHED FOR ${testName} ------------------`)
+        this.#_logger.info(`------------------- TEST EXECUTION FINISHED FOR ${testName} ------------------`);
     }
 
     info(text) {
-        this.#_logger.info(text)
+        this.#_logger.info(text);
+    }
+
+    error(text) {
+        this.#_logger.error(text);
     }
 }
 

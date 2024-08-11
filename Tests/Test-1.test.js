@@ -5,7 +5,7 @@ const { expectedResults } = require("../TestData/Test-1Data").Test1Data;
 const Logger = require("../Logger/Logger");
 const { assert } = require("chai");
 const testName = "Test-1";
-const { startRecording, stopRecording } = require("../VideoRecorder/videoRecorder")
+const { startRecording, stopRecording } = require("../VideoRecorder/videoRecorder");
 
 describe("Test 1", function () {
     let basePageFunctions;
@@ -16,13 +16,13 @@ describe("Test 1", function () {
         logger.startLoggin(testName);
         basePageFunctions = new BasePageFunctions();
         await basePageFunctions.launchBrowser();
-        await startRecording(await basePageFunctions.getPage(), testName)
+        await startRecording(await basePageFunctions.getPage(), testName);
     });
 
     after(async function () {
         this.timeout(timeoutTest);
         await basePageFunctions.quit();
-        await stopRecording()
+        await stopRecording();
         logger.endLoggin(testName);
     });
 

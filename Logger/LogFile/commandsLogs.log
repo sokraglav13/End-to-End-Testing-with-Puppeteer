@@ -1,0 +1,28 @@
+2024-08-11 13:48:04 info: ------------------- TEST EXECUTION STARTED FOR Test-1 -------------------
+2024-08-11 13:48:05 info: Browser launched successfully
+2024-08-11 13:48:05 info: Recording Video has started
+2024-08-11 13:48:08 info: Open url
+2024-08-11 13:48:08 info: Fullscreen size set
+2024-08-11 13:48:10 info: Login action
+2024-08-11 13:48:10 error: Error: No element found for selector: #user-name
+    at assert (C:\Users\SokratisGlavinas\Downloads\newproject\node_modules\puppeteer-core\lib\cjs\puppeteer\util\assert.js:18:15)
+    at CdpFrame.type (C:\Users\SokratisGlavinas\Downloads\newproject\node_modules\puppeteer-core\lib\cjs\puppeteer\api\Frame.js:864:40)
+    at async BasePageFunctions.login (C:\Users\SokratisGlavinas\Downloads\newproject\Pages\BasePageFunctions.js:71:13)
+    at async Context.<anonymous> (C:\Users\SokratisGlavinas\Downloads\newproject\Tests\Test-1.test.js:34:9)
+2024-08-11 13:48:11 info: Browser Closed
+2024-08-11 13:48:12 info: Recording Video has stopped
+2024-08-11 13:48:12 info: ------------------- TEST EXECUTION FINISHED FOR Test-1 ------------------
+2024-08-11 13:58:25 info: ------------------- TEST EXECUTION STARTED FOR Test-1 -------------------
+2024-08-11 13:58:26 info: Browser launched successfully
+2024-08-11 13:58:26 info: Recording Video has started
+2024-08-11 13:58:29 info: Open url
+2024-08-11 13:58:29 info: Fullscreen size set
+2024-08-11 13:58:31 info: Login action
+2024-08-11 13:58:32 info: Click on Add to Cart button for Backpack Item
+2024-08-11 13:58:32 info: Click on Cart button
+2024-08-11 13:58:33 info: Click on Checkout button
+2024-08-11 13:58:34 info: Click on Continue button in Checkout
+2024-08-11 13:58:34 info: Get the error
+2024-08-11 13:58:34 info: Browser Closed
+2024-08-11 13:58:37 info: Recording Video has stopped
+2024-08-11 13:58:37 info: ------------------- TEST EXECUTION FINISHED FOR Test-1 ------------------

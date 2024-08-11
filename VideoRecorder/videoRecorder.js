@@ -20,14 +20,27 @@ const recorderConfigs = {
 };
 
 const startRecording = async function (page, videoName) {
-    logger = new Logger()
-    recorder = new PuppeteerScreenRecorder(page, recorderConfigs)
-    await recorder.start(`./TestExecutionVideos/${videoName}.mp4`)
-    logger.info("Recording Video has started")
+    logger = new Logger();
+    try {
+        recorder = new PuppeteerScreenRecorder(page, recorderConfigs);
+        await recorder.start(`./TestExecutionVideos/${videoName}.mp4`);
+        logger.info("Recording Video has started");
+    }
+    catch (er) {
+        logger.error(er);
+        throw new Error(er);
+    }
+
 }
 const stopRecording = async function () {
-    await recorder.stop()
-    logger.info("Recording Video has stopped")
+    try {
+        await recorder.stop();
+        logger.info("Recording Video has stopped");
+    }
+    catch (er) {
+        logger.error(er);
+        throw new Error(er);
+    }
 }
 
 

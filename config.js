@@ -7,4 +7,14 @@ module.exports = {
 
     /**Sets the commands timeout */
     commandsTimeout: 40000,
+
+    /**Sets the browser options */
+    browserConfigurations: {
+        executablePath: 'C:/testBrowsers/Chrome_V119.0.6045.105/chrome.exe',
+        headless: false,
+        slowMo: 20,
+        args: [
+            '--start-fullscreen',
+        ]
+    }
 }
