@@ -1,14 +1,11 @@
-const { Products } = require("./Dictionary")
+const { Products } = require("./Dictionary");
+const { MainPageElements } = require("../WebElements/ProductsPageElements");
 
 const findProductButton = (productName) => {
-    try {
-        if (Products.includes(productName)) {
-            console.log(true)
-        } else {
-            console.log(false)
-        }
-    } catch (error) {
-        throw new Error(error)
+    if (Products.includes(productName)) {
+        return MainPageElements[productName];
+    } else {
+        throw new Error(`This input product name does not exists! \nInput value: '${productName}'`);
     }
 }
 
@@ -17,4 +14,19 @@ const getClearValue = (value) => {
     return match ? match[0] : null;
 }
 
-module.exports = { getClearValue }
+const sortBy = (sortMethod) => {
+    switch (sortMethod) {
+        case "NameAZ":
+            return MainPageElements.Sorting.AZSorting
+        case "NameZA":
+            return MainPageElements.Sorting.ZASorting
+        case "PriceLoHi":
+            return MainPageElements.Sorting.lohiSorting
+        case "PriceHiLo":
+            return MainPageElements.Sorting.hiloSorting
+        default:
+            throw new Error("Input sort methos is invalid!")
+    }
+}
+
+module.exports = { getClearValue, findProductButton, sortBy }
