@@ -1,0 +1,166 @@
+2024-08-22 13:25:46 info: ------------------- TEST EXECUTION STARTED FOR Test-1 -------------------
+2024-08-22 13:25:47 info: Browser launched successfully
+2024-08-22 13:25:50 info: Open url
+2024-08-22 13:25:50 info: Fullscreen size set
+2024-08-22 13:25:53 info: Login action
+2024-08-22 13:25:54 info: Click on Add to Cart button for Backpack Item
+2024-08-22 13:25:54 info: Click on Cart button
+2024-08-22 13:25:55 info: Click on Checkout button
+2024-08-22 13:25:56 info: Click on Continue button in Checkout
+2024-08-22 13:25:56 info: Get the error
+2024-08-22 13:25:56 info: Browser Closed
+2024-08-22 13:25:56 info: ------------------- TEST EXECUTION FINISHED FOR Test-1 ------------------
+2024-08-22 14:25:22 info: ------------------- TEST EXECUTION STARTED FOR Test-1 -------------------
+2024-08-22 14:25:23 info: Browser launched successfully
+2024-08-22 14:25:26 info: Open url
+2024-08-22 14:25:26 info: Fullscreen size set
+2024-08-22 14:25:26 error: TypeError: Cannot read properties of null (reading 'type')
+    at LoginPage.login (C:\Users\SokratisGlavinas\Downloads\newproject\Pages\LoginPage.js:10:29)
+    at Context.<anonymous> (C:\Users\SokratisGlavinas\Downloads\newproject\Tests\Test-1.test.js:34:25)
+2024-08-22 14:25:26 info: Browser Closed
+2024-08-22 14:25:26 info: ------------------- TEST EXECUTION FINISHED FOR Test-1 ------------------
+2024-08-22 14:25:43 info: ------------------- TEST EXECUTION STARTED FOR Test-1 -------------------
+2024-08-22 14:25:44 info: Browser launched successfully
+2024-08-22 14:25:46 info: Open url
+2024-08-22 14:25:46 info: Fullscreen size set
+2024-08-22 14:25:46 error: ReferenceError: LoginPageElements is not defined
+    at LoginPage.login (C:\Users\SokratisGlavinas\Downloads\newproject\Pages\LoginPage.js:10:29)
+    at Context.<anonymous> (C:\Users\SokratisGlavinas\Downloads\newproject\Tests\Test-1.test.js:34:25)
+2024-08-22 14:25:47 info: Browser Closed
+2024-08-22 14:25:47 info: ------------------- TEST EXECUTION FINISHED FOR Test-1 ------------------
+2024-08-22 14:26:11 info: ------------------- TEST EXECUTION STARTED FOR Test-1 -------------------
+2024-08-22 14:26:12 info: Browser launched successfully
+2024-08-22 14:26:15 info: Open url
+2024-08-22 14:26:15 info: Fullscreen size set
+2024-08-22 14:26:15 error: TypeError: this.type is not a function
+    at LoginPage.login (C:\Users\SokratisGlavinas\Downloads\newproject\Pages\LoginPage.js:11:24)
+    at Context.<anonymous> (C:\Users\SokratisGlavinas\Downloads\newproject\Tests\Test-1.test.js:34:25)
+2024-08-22 14:26:15 info: Browser Closed
+2024-08-22 14:26:15 info: ------------------- TEST EXECUTION FINISHED FOR Test-1 ------------------
+2024-08-22 14:27:28 info: ------------------- TEST EXECUTION STARTED FOR Test-1 -------------------
+2024-08-22 14:27:29 info: Browser launched successfully
+2024-08-22 14:27:32 info: Open url
+2024-08-22 14:29:12 info: ------------------- TEST EXECUTION STARTED FOR Test-1 -------------------
+2024-08-22 14:29:25 info: Browser launched successfully
+2024-08-22 14:29:27 info: Open url
+2024-08-22 14:29:27 info: Fullscreen size set
+2024-08-22 14:29:31 error: TypeError: this.type is not a function
+    at LoginPage.login (C:\Users\SokratisGlavinas\Downloads\newproject\Pages\LoginPage.js:13:24)
+    at Context.<anonymous> (C:\Users\SokratisGlavinas\Downloads\newproject\Tests\Test-1.test.js:34:25)
+2024-08-22 14:29:31 info: Browser Closed
+2024-08-22 14:29:31 info: ------------------- TEST EXECUTION FINISHED FOR Test-1 ------------------
+2024-08-22 14:30:10 info: ------------------- TEST EXECUTION STARTED FOR Test-1 -------------------
+2024-08-22 14:30:16 info: Browser launched successfully
+2024-08-22 14:30:19 info: Open url
+2024-08-22 14:30:19 info: Fullscreen size set
+2024-08-22 14:30:20 error: TypeError: Cannot read properties of null (reading 'type')
+    at LoginPage.login (C:\Users\SokratisGlavinas\Downloads\newproject\Pages\LoginPage.js:13:29)
+    at Context.<anonymous> (C:\Users\SokratisGlavinas\Downloads\newproject\Tests\Test-1.test.js:34:25)
+2024-08-22 14:30:21 info: Browser Closed
+2024-08-22 14:30:21 info: ------------------- TEST EXECUTION FINISHED FOR Test-1 ------------------
+2024-08-22 14:37:25 info: ------------------- TEST EXECUTION STARTED FOR Test-1 -------------------
+2024-08-22 14:37:27 info: Browser launched successfully
+2024-08-22 14:37:29 info: Open url
+2024-08-22 14:37:29 info: Fullscreen size set
+2024-08-22 14:37:29 error: TypeError: Cannot read properties of null (reading 'type')
+    at LoginPage.type (C:\Users\SokratisGlavinas\Downloads\newproject\Pages\BasePageFunctions.js:66:25)
+    at LoginPage.login (C:\Users\SokratisGlavinas\Downloads\newproject\Pages\LoginPage.js:11:24)
+    at Context.<anonymous> (C:\Users\SokratisGlavinas\Downloads\newproject\Tests\Test-1.test.js:34:25)
+2024-08-22 14:37:30 info: Browser Closed
+2024-08-22 14:37:30 info: ------------------- TEST EXECUTION FINISHED FOR Test-1 ------------------
+2024-08-22 14:37:55 info: ------------------- TEST EXECUTION STARTED FOR Test-1 -------------------
+2024-08-22 14:37:57 info: Browser launched successfully
+2024-08-22 14:37:59 info: Open url
+2024-08-22 14:37:59 info: Fullscreen size set
+2024-08-22 14:37:59 error: TypeError: this.type1 is not a function
+    at LoginPage.login (C:\Users\SokratisGlavinas\Downloads\newproject\Pages\LoginPage.js:11:24)
+    at Context.<anonymous> (C:\Users\SokratisGlavinas\Downloads\newproject\Tests\Test-1.test.js:34:25)
+2024-08-22 14:38:00 info: Browser Closed
+2024-08-22 14:38:00 info: ------------------- TEST EXECUTION FINISHED FOR Test-1 ------------------
+2024-08-22 14:44:56 info: ------------------- TEST EXECUTION STARTED FOR Test-1 -------------------
+2024-08-22 14:44:57 info: Browser launched successfully
+2024-08-22 14:45:00 info: Open url
+2024-08-22 14:45:00 info: Fullscreen size set
+2024-08-22 14:45:00 error: TypeError: Cannot read properties of null (reading 'type')
+    at LoginPage.type1 (C:\Users\SokratisGlavinas\Downloads\newproject\Pages\BasePageFunctions.js:66:25)
+    at LoginPage.login (C:\Users\SokratisGlavinas\Downloads\newproject\Pages\LoginPage.js:11:24)
+    at Context.<anonymous> (C:\Users\SokratisGlavinas\Downloads\newproject\Tests\Test-1.test.js:34:25)
+2024-08-22 14:45:00 info: Browser Closed
+2024-08-22 14:45:00 info: ------------------- TEST EXECUTION FINISHED FOR Test-1 ------------------
+2024-08-22 14:46:17 info: ------------------- TEST EXECUTION STARTED FOR Test-1 -------------------
+2024-08-22 14:46:18 info: Browser launched successfully
+2024-08-22 14:46:21 info: Open url
+2024-08-22 14:46:21 info: Fullscreen size set
+2024-08-22 14:46:21 error: TypeError: Cannot read properties of null (reading 'type')
+    at LoginPage.type1 (C:\Users\SokratisGlavinas\Downloads\newproject\Pages\BasePageFunctions.js:66:25)
+    at LoginPage.login (C:\Users\SokratisGlavinas\Downloads\newproject\Pages\LoginPage.js:12:24)
+    at Context.<anonymous> (C:\Users\SokratisGlavinas\Downloads\newproject\Tests\Test-1.test.js:34:25)
+2024-08-22 14:46:21 info: Browser Closed
+2024-08-22 14:46:21 info: ------------------- TEST EXECUTION FINISHED FOR Test-1 ------------------
+2024-08-22 14:53:41 info: ------------------- TEST EXECUTION STARTED FOR Test-1 -------------------
+2024-08-22 14:53:42 info: Browser launched successfully
+2024-08-22 14:53:46 info: Open url
+2024-08-22 14:53:46 info: Fullscreen size set
+2024-08-22 14:53:48 info: Login action
+2024-08-22 14:53:49 info: Click on Add to Cart button for Backpack Item
+2024-08-22 14:53:50 info: Click on Cart button
+2024-08-22 14:53:50 info: Click on Checkout button
+2024-08-22 14:53:51 info: Click on Continue button in Checkout
+2024-08-22 14:53:51 info: Get the error
+2024-08-22 14:53:52 info: Browser Closed
+2024-08-22 14:53:52 info: ------------------- TEST EXECUTION FINISHED FOR Test-1 ------------------
+2024-08-22 15:22:30 info: ------------------- TEST EXECUTION STARTED FOR Test-1 -------------------
+2024-08-22 15:22:31 info: Browser launched successfully
+2024-08-22 15:22:36 info: Open url
+2024-08-22 15:22:36 info: Fullscreen size set
+2024-08-22 15:22:36 error: TypeError: this.type is not a function
+    at LoginPage.login (C:\Users\SokratisGlavinas\Downloads\newproject\Pages\LoginPage.js:13:24)
+    at Context.<anonymous> (C:\Users\SokratisGlavinas\Downloads\newproject\Tests\Test-1.test.js:34:25)
+2024-08-22 15:22:36 info: Browser Closed
+2024-08-22 15:22:36 info: ------------------- TEST EXECUTION FINISHED FOR Test-1 ------------------
+2024-08-22 15:26:24 info: ------------------- TEST EXECUTION STARTED FOR Test-1 -------------------
+2024-08-22 15:26:25 info: Browser launched successfully
+2024-08-22 15:26:29 info: Open url
+2024-08-22 15:26:29 info: Fullscreen size set
+2024-08-22 15:26:29 error: TypeError: this.type is not a function
+    at LoginPage.login (C:\Users\SokratisGlavinas\Downloads\newproject\Pages\LoginPage.js:12:24)
+    at Context.<anonymous> (C:\Users\SokratisGlavinas\Downloads\newproject\Tests\Test-1.test.js:34:25)
+2024-08-22 15:26:29 info: Browser Closed
+2024-08-22 15:26:29 info: ------------------- TEST EXECUTION FINISHED FOR Test-1 ------------------
+2024-08-22 15:26:38 info: ------------------- TEST EXECUTION STARTED FOR Test-1 -------------------
+2024-08-22 15:26:39 info: Browser launched successfully
+2024-08-22 15:26:42 info: Open url
+2024-08-22 15:26:42 info: Fullscreen size set
+2024-08-22 15:26:45 info: Login action
+2024-08-22 15:26:46 info: Click on Add to Cart button for Backpack Item
+2024-08-22 15:26:46 info: Click on Cart button
+2024-08-22 15:26:47 info: Click on Checkout button
+2024-08-22 15:26:48 info: Click on Continue button in Checkout
+2024-08-22 15:26:48 info: Get the error
+2024-08-22 15:26:48 info: Browser Closed
+2024-08-22 15:26:48 info: ------------------- TEST EXECUTION FINISHED FOR Test-1 ------------------
+2024-08-22 16:14:10 info: ------------------- TEST EXECUTION STARTED FOR Test-1 -------------------
+2024-08-22 16:14:12 info: Browser launched successfully
+2024-08-22 16:14:34 info: ------------------- TEST EXECUTION STARTED FOR Test-1 -------------------
+2024-08-22 16:14:35 info: Browser launched successfully
+2024-08-22 16:14:39 info: Open url
+2024-08-22 16:14:39 info: Fullscreen size set
+2024-08-22 16:14:42 info: Login action
+2024-08-22 16:16:25 info: ------------------- TEST EXECUTION STARTED FOR Test-1 -------------------
+2024-08-22 16:16:27 info: Browser launched successfully
+2024-08-22 16:16:30 info: Open url
+2024-08-22 16:16:30 info: Fullscreen size set
+2024-08-22 16:16:33 info: Login action
+2024-08-22 16:16:34 info: Click on Add to Cart button for Backpack Item
+2024-08-22 16:16:34 info: Click on Cart button
+2024-08-22 16:16:35 info: Click on Checkout button
+2024-08-22 16:16:36 info: Click on Continue button in Checkout
+2024-08-22 16:16:36 info: Get the error
+2024-08-22 16:16:36 info: Browser Closed
+2024-08-22 16:16:36 info: ------------------- TEST EXECUTION FINISHED FOR Test-1 ------------------
+2024-08-22 16:17:29 info: ------------------- TEST EXECUTION STARTED FOR Test-1 -------------------
+2024-08-22 16:17:37 info: Browser launched successfully
+2024-08-22 16:17:47 info: Open url
+2024-08-22 16:17:48 info: Fullscreen size set
+2024-08-22 16:17:53 info: Login action
+2024-08-22 16:17:56 info: Click on Add to Cart button for Backpack Item

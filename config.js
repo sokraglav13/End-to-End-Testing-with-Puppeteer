@@ -10,12 +10,12 @@ module.exports = {
 
     /**Sets the browser options */
     browserConfigurations: {
-        executablePath: 'C:/testBrowsers/Chrome_V119.0.6045.105/chrome.exe',
+        executablePath: 'C:/Users/SokratisGlavinas/Downloads/chrome-win64_127/chrome.exe',
         headless: false,
         slowMo: 20,
         args: [
             '--start-fullscreen',
-            '--disable-notifications',
-        ]
+            '--disable-notifications'
+        ],
     }
 }

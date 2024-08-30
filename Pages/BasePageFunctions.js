@@ -1,19 +1,28 @@
-const puppeteer = require('puppeteer');
+// const puppeteer = require('puppeteer');
+const puppeteer = require('puppeteer-extra');
 const { LoginPageElements, MainPageElements, CartPageElements, CheckoutPageElements } = require("../WebElements/webElements");
 const { commandsTimeout, browserConfigurations } = require("../config");
-const Logger = require("../Logger/Logger");
+const { getClearValue } = require("../Utils/Utils");
 
 class BasePageFunctions {
-    logger;
-    constructor() {
+    constructor(logger) {
         this.browser = null;
         this.page = null;
         this.recorder = null;
-        this.logger = new Logger();
+        this.logger = logger
     }
 
     async launchBrowser() {
         try {
+            //Disabling safe browsing 
+            await puppeteer.use(require('puppeteer-extra-plugin-user-preferences')({
+                userPrefs: {
+                    safebrowsing: {
+                        enabled: false,
+                        enhanced: false
+                    }
+                }
+            }));
             this.browser = await puppeteer.launch(browserConfigurations)
             this.page = await this.browser.newPage();
             this.logger.info("Browser launched successfully");
@@ -23,7 +32,7 @@ class BasePageFunctions {
         }
     }
 
-    async getPage() {
+    getPage() {
         try {
             return this.page
         }
@@ -54,6 +63,16 @@ class BasePageFunctions {
         }
     }
 
+    async type(element, text) {
+        await this.page.waitForSelector(element, { timeout: commandsTimeout });
+        await this.page.type(element, text);
+    }
+
+    async click(element) {
+        await this.page.waitForSelector(element, { timeout: commandsTimeout });
+        await this.page.click(element);
+    }
+
     async setFullscreen() {
         try {
             this.page.setViewport({
@@ -69,24 +88,23 @@ class BasePageFunctions {
 
     }
 
-    async login(username, password) {
-        try {
-            await this.page.type(LoginPageElements.UsernameField, username);
-            await this.page.type(LoginPageElements.PasswordField, password);
-            await this.page.click(LoginPageElements.LoginBtn);
-            this.logger.info("Login action");
-        }
-        catch (er) {
-            this.logger.error(er);
-            throw new Error(er);
-        }
+    async pressKeyboardButton(key) {
+        await this.page.keyboard.press(key);
     }
+
+
+    async addBackpackToCart() { }
+    async addBackpackToCart() { }
+    async addBackpackToCart() { }
+    async addBackpackToCart() { }
+    async addBackpackToCart() { }
+
 
     async addBackpackToCart() {
         try {
-            await this.page.keyboard.press('Enter');
-            await this.page.waitForSelector(MainPageElements.BackpackAddToCardBtn, { timeout: commandsTimeout });
-            await this.page.click(MainPageElements.BackpackAddToCardBtn);
+            await this.pressKeyboardButton('Enter')
+            await this.page.waitForSelector(MainPageElements.Backpack.AddToCartBtn, { timeout: commandsTimeout });
+            await this.page.click(MainPageElements.Backpack.AddToCartBtn);
             this.logger.info("Click on Add to Cart button for Backpack Item");
         }
         catch (er) {
@@ -248,8 +266,8 @@ class BasePageFunctions {
             this.logger.info("Get items total price");
             await this.page.waitForSelector(CheckoutPageElements.PriceTotal, { timeout: commandsTimeout });
             const fullText = await this.page.$eval(CheckoutPageElements.PriceTotal, el => el.textContent);
-            const match = fullText.match(/\$[0-9,.]+/);
-            return match ? match[0] : null;
+            const clearValue = getClearValue(fullText);
+            return clearValue
         }
         catch (er) {
             this.logger.error(er);
@@ -262,8 +280,8 @@ class BasePageFunctions {
             this.logger.info("Get tax price");
             await this.page.waitForSelector(CheckoutPageElements.TaxPrice, { timeout: commandsTimeout });
             const fullText = await this.page.$eval(CheckoutPageElements.TaxPrice, el => el.textContent);
-            const match = fullText.match(/\$[0-9,.]+/);
-            return match ? match[0] : null;
+            const clearValue = getClearValue(fullText);
+            return clearValue
         }
         catch (er) {
             this.logger.error(er);
@@ -276,8 +294,8 @@ class BasePageFunctions {
             this.logger.info("Get items total price includes tax");
             await this.page.waitForSelector(CheckoutPageElements.TotalPriceIncludesTax, { timeout: commandsTimeout });
             const fullText = await this.page.$eval(CheckoutPageElements.TotalPriceIncludesTax, el => el.textContent);
-            const match = fullText.match(/\$[0-9,.]+/);
-            return match ? match[0] : null;
+            const clearValue = getClearValue(fullText);
+            return clearValue
         }
         catch (er) {
             this.logger.error(er);

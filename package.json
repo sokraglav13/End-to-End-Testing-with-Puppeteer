@@ -12,6 +12,8 @@
   "dependencies": {
     "chai": "^4.4.1",
     "puppeteer": "^23.0.2",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-user-preferences": "^2.4.1",
     "puppeteer-screen-recorder": "^3.0.3",
     "winston": "^3.14.1"
   },

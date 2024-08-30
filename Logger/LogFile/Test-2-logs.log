@@ -1,0 +1,20 @@
+2024-08-22 13:29:04 info: ------------------- TEST EXECUTION STARTED FOR Test-2 -------------------
+2024-08-22 13:29:05 info: Browser launched successfully
+2024-08-22 13:29:11 info: Open url
+2024-08-22 13:29:11 info: Fullscreen size set
+2024-08-22 13:29:14 info: Login action
+2024-08-22 13:29:14 info: Click on Add to Cart button for Backpack Item
+2024-08-22 13:29:15 info: Click on Add to Cart button for Bike Light Item
+2024-08-22 13:29:16 info: Click on Cart button
+2024-08-22 13:29:16 info: Click on Checkout button
+2024-08-22 13:29:18 info: Fills the Order Information Form
+2024-08-22 13:29:19 info: Click on Continue button in Checkout
+2024-08-22 13:29:19 info: Get backpack product title
+2024-08-22 13:29:19 info: Get backpack product price
+2024-08-22 13:29:20 info: Get bike light product title
+2024-08-22 13:29:20 info: Get bike light product price
+2024-08-22 13:29:20 info: Get items total price
+2024-08-22 13:29:21 info: Get tax price
+2024-08-22 13:29:21 info: Get items total price includes tax
+2024-08-22 13:29:22 info: Browser Closed
+2024-08-22 13:29:22 info: ------------------- TEST EXECUTION FINISHED FOR Test-2 ------------------
