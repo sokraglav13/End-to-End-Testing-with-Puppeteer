@@ -1,5 +1,5 @@
 const BasePageFunctions = require("./BasePageFunctions")
-const { LoginPageElements, MainPageElements, CartPageElements, CheckoutPageElements } = require("../WebElements/webElements");
+const { LoginPageElements } = require("../WebElements/LoginPageElements");
 
 class LoginPage extends BasePageFunctions {
     constructor(logger, page) {
