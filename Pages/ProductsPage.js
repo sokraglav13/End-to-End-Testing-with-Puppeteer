@@ -10,16 +10,16 @@ class ProductsPage extends BasePageFunctions {
         this.page = page;
     }
 
-    /**This function clicks on 'Add to Cart' button according to the input value
+    /**This function clicks on 'Add to Cart' button according to the input value for a specific product
      * @example 
      * Valid Product Names: 
+     * 
      * "Backpack",
      * "BikeLight",
      * "BoltTshirt",
      * "FleeceJacket",
      * "Onesie",
-     * "TestTshirt",
-     */
+     * "TestTshirt" */
     async addProductToCart(productName) {
         try {
             const productElements = findProductButton(productName);
@@ -34,16 +34,16 @@ class ProductsPage extends BasePageFunctions {
 
     }
 
-    /**This function clicks on 'Remove' button according to the input value
+    /**This function clicks on 'Remove' button according to the input value for a specific product
      * @example 
      * Valid Product Names: 
+     * 
      * "Backpack",
      * "BikeLight",
      * "BoltTshirt",
      * "FleeceJacket",
      * "Onesie",
-     * "TestTshirt",
-     */
+     * "TestTshirt" */
     async removeProductFromCart(productName) {
         try {
             const productElements = findProductButton(productName);
@@ -57,14 +57,14 @@ class ProductsPage extends BasePageFunctions {
         }
     }
 
-    /**
+    /** This function sorts the product list according to the input value
      * @example
-     * Valid sort methods
+     * Valid sort methods:
+     * 
      * "NameAZ",
      * "NameZA",
      * "PriceLoHi",
-     * "PriceHiLo",
-     */
+     * "PriceHiLo" */
     async sortProductsBy(sortMethod) {
         try {
             await this.page.waitForSelector(MainPageElements.Sorting.SortingBtn, { timeout: commandsTimeout });
@@ -79,28 +79,16 @@ class ProductsPage extends BasePageFunctions {
         }
     }
 
-    async clickCart() {
-        try {
-            await this.page.waitForSelector(GeneralElements.CartBtn, { timeout: commandsTimeout });
-            await this.page.click(GeneralElements.CartBtn);
-            this.logger.info("Click on Cart button");
-        }
-        catch (er) {
-            this.logger.error(er);
-            throw new Error(er);
-        }
-    }
-
-    /**
+    /** This function clicks on products title according to the input value
     * @example 
-     * Valid Product Names: 
+     * Valid Product Names:
+     *  
      * "Backpack",
      * "BikeLight",
      * "BoltTshirt",
      * "FleeceJacket",
      * "Onesie",
-     * "TestTshirt",
-     */
+     * "TestTshirt" */
     async clickProductTitle(productName) {
         try {
             const productElements = findProductButton(productName)
@@ -114,6 +102,7 @@ class ProductsPage extends BasePageFunctions {
         }
     }
 
+    /**This function clicks the Back to Products button */
     async clickBackToProducts() {
         try {
             await this.page.waitForSelector(MainPageElements.BackToProductBtn, { timeout: commandsTimeout });
@@ -126,6 +115,7 @@ class ProductsPage extends BasePageFunctions {
         }
     }
 
+    /**This function selects a random product and clicks the Add to cart button */
     async selectRandomProduct() {
         try {
             await this.page.waitForSelector(MainPageElements.AllItems, { timeout: commandsTimeout });
@@ -141,6 +131,7 @@ class ProductsPage extends BasePageFunctions {
         }
     }
 
+    /**This function selects two random products and clicks the Add to cart button */
     async selectTwoRandomProducts() {
         try {
             await this.page.waitForSelector(MainPageElements.AllItems, { timeout: commandsTimeout });

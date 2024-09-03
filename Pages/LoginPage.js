@@ -7,6 +7,11 @@ class LoginPage extends BasePageFunctions {
         this.page = page;
     }
 
+    /**This function fill the required fields and performs login action to the system
+     * 
+     * @param {string} username 
+     * @param {string} password 
+     */
     async login(username, password) {
         try {
             await this.type(LoginPageElements.UsernameField, username);

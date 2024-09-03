@@ -8,6 +8,7 @@ class YourCartPage extends BasePageFunctions {
         this.page = page;
     }
 
+    /**This function clicks on Checkout button in 'Your Cart' Page */
     async pressCheckout() {
         try {
             await this.page.waitForSelector(CartPageElements.CheckoutBtn, { timeout: commandsTimeout });
@@ -20,6 +21,7 @@ class YourCartPage extends BasePageFunctions {
         }
     }
 
+    /**This function clicks on Continue Shopping button in 'Your Cart' Page */
     async pressContinueShopping() {
         try {
             await this.page.waitForSelector(CartPageElements.ContinueShopping, { timeout: commandsTimeout });
@@ -32,3 +34,5 @@ class YourCartPage extends BasePageFunctions {
         }
     }
 }
+
+module.exports = YourCartPage

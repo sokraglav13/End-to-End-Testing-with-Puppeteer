@@ -1,8 +1,6 @@
 // const puppeteer = require('puppeteer');
 const puppeteer = require('puppeteer-extra');
-const { CheckoutPageElements } = require("../WebElements/CheckoutPageElements");
 const { commandsTimeout, browserConfigurations } = require("../config");
-const { getClearValue } = require("../Utils/Utils");
 
 class BasePageFunctions {
     constructor(logger) {
@@ -12,6 +10,7 @@ class BasePageFunctions {
         this.logger = logger
     }
 
+    /** This function initialize the page instance and launches the browser */
     async launchBrowser() {
         try {
             //Disabling safe browsing 
@@ -32,6 +31,7 @@ class BasePageFunctions {
         }
     }
 
+    /** This function returns the instance of page */
     getPage() {
         try {
             return this.page
@@ -41,6 +41,7 @@ class BasePageFunctions {
         }
     }
 
+    /** This function closes the browser instance */
     async quit() {
         try {
             await this.browser.close();
@@ -52,6 +53,9 @@ class BasePageFunctions {
         }
     }
 
+    /** This function open the input url
+     * @param {string} url
+     */
     async openUrl(url) {
         try {
             await this.page.goto(url, { waitUntil: 'networkidle0' });
@@ -63,16 +67,24 @@ class BasePageFunctions {
         }
     }
 
+    /** This function types input value into text fields
+     * @param {Element} element 
+     * @param {string} text 
+     */
     async type(element, text) {
         await this.page.waitForSelector(element, { timeout: commandsTimeout });
         await this.page.type(element, text);
     }
 
+    /** This function clicks on the input elements
+     * @param {Element} element 
+     */
     async click(element) {
         await this.page.waitForSelector(element, { timeout: commandsTimeout });
         await this.page.click(element);
     }
 
+    /** This function sets the window size to fullscreen */
     async setFullscreen() {
         try {
             this.page.setViewport({
@@ -88,86 +100,21 @@ class BasePageFunctions {
 
     }
 
+    /** This function clicks keyboard key by input value 
+     * @param {string} key 
+    */
     async pressKeyboardButton(key) {
         await this.page.keyboard.press(key);
     }
 
-
-    async addBackpackToCart() { }
-    async addBackpackToCart() { }
-    async addBackpackToCart() { }
-    async addBackpackToCart() { }
-    async addBackpackToCart() { }
-
-    async getBackpackProductPrice() {
-        try {
-            await this.page.waitForSelector(CheckoutPageElements.BackpackProductPrice, { timeout: commandsTimeout });
-            this.logger.info("Get backpack product price");
-            return await this.page.$eval(CheckoutPageElements.BackpackProductPrice, el => el.textContent);
-        }
-        catch (er) {
-            this.logger.error(er);
-            throw new Error(er);
-        }
-    }
-
-    async getBikeLightProductTitle() {
-        try {
-            await this.page.waitForSelector(CheckoutPageElements.BikeLightProductTitle, { timeout: commandsTimeout });
-            this.logger.info("Get bike light product title");
-            return await this.page.$eval(CheckoutPageElements.BikeLightProductTitle, el => el.textContent);
-        }
-        catch (er) {
-            this.logger.error(er);
-            throw new Error(er);
-        }
-    }
-
-    async getBikeLightProductPrice() {
-        try {
-            await this.page.waitForSelector(CheckoutPageElements.BikeLightProductPrice, { timeout: commandsTimeout });
-            this.logger.info("Get bike light product price");
-            return await this.page.$eval(CheckoutPageElements.BikeLightProductPrice, el => el.textContent);
-        }
-        catch (er) {
-            this.logger.error(er);
-            throw new Error(er);
-        }
-    }
-
-    async getItemsTotal() {
-        try {
-            this.logger.info("Get items total price");
-            await this.page.waitForSelector(CheckoutPageElements.PriceTotal, { timeout: commandsTimeout });
-            const fullText = await this.page.$eval(CheckoutPageElements.PriceTotal, el => el.textContent);
-            const clearValue = getClearValue(fullText);
-            return clearValue
-        }
-        catch (er) {
-            this.logger.error(er);
-            throw new Error(er);
-        }
-    }
-
-    async getItemsTax() {
-        try {
-            this.logger.info("Get tax price");
-            await this.page.waitForSelector(CheckoutPageElements.TaxPrice, { timeout: commandsTimeout });
-            const fullText = await this.page.$eval(CheckoutPageElements.TaxPrice, el => el.textContent);
-            const clearValue = getClearValue(fullText);
-            return clearValue
-        }
-        catch (er) {
-            this.logger.error(er);
-            throw new Error(er);
-        }
-    }
-
-    async getText(elem) {
+    /** This function returns the text from element
+     * @param {Element} element 
+    */
+    async getText(element) {
         try {
             this.logger.info("Get Text");
-            await this.page.waitForSelector(elem, { timeout: commandsTimeout });
-            return await this.page.$eval(elem, el => el.textContent);
+            await this.page.waitForSelector(element, { timeout: commandsTimeout });
+            return await this.page.$eval(element, el => el.textContent);
         }
         catch (er) {
             this.logger.error(er);
@@ -175,9 +122,12 @@ class BasePageFunctions {
         }
     }
 
-
+    /** This function delays the execution by input value
+     * @param {number} time 
+     */
     async delay(time) {
         return new Promise(function (resolve) {
+            this.logger.info("Pausing the execution for ", time, "ms")
             setTimeout(resolve, time)
         });
     }

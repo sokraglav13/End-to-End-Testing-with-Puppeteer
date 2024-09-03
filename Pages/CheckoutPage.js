@@ -1,5 +1,6 @@
 const BasePageFunctions = require("../Pages/BasePageFunctions");
 const { CheckoutPageElements } = require("../WebElements/CheckoutPageElements");
+const { getClearValue } = require("../Utils/Utils");
 
 class CheckoutPage extends BasePageFunctions {
     constructor(logger, page) {
@@ -7,6 +8,12 @@ class CheckoutPage extends BasePageFunctions {
         this.page = page;
     }
 
+    /** This function fills the required information for the form in the 'Your Information' Page
+     * 
+     * @param {string} firstname 
+     * @param {string} lastname 
+     * @param {string} postalcode 
+     */
     async fillInformationForm(firstname, lastname, postalcode) {
         try {
             await this.page.waitForSelector(CheckoutPageElements.YourInformation.FirstnameField, { timeout: commandsTimeout });
@@ -21,6 +28,7 @@ class CheckoutPage extends BasePageFunctions {
         }
     }
 
+    /** This function clicks on Continue button */
     async pressContinue() {
         try {
             await this.page.waitForSelector(CheckoutPageElements.ContinueBtn, { timeout: commandsTimeout });
@@ -33,6 +41,7 @@ class CheckoutPage extends BasePageFunctions {
         }
     }
 
+    /** This function clicks on Cancel button */
     async pressCancel() {
         try {
             await this.page.waitForSelector(CheckoutPageElements.Cancel, { timeout: commandsTimeout });
@@ -45,6 +54,8 @@ class CheckoutPage extends BasePageFunctions {
         }
     }
 
+    /** This function returns the error message in 'Your Information' Page
+     * @returns {string} */
     async getErrorMessage() {
         try {
             this.logger.info(`Get the error message`);
@@ -57,6 +68,8 @@ class CheckoutPage extends BasePageFunctions {
         }
     }
 
+    /** This function returns the items total price
+     * @returns {string} */
     async getItemsTotal() {
         try {
             this.logger.info("Get items total price");
@@ -71,6 +84,8 @@ class CheckoutPage extends BasePageFunctions {
         }
     }
 
+    /** This function returns the tax number
+     * @returns {string} */
     async getItemsTax() {
         try {
             this.logger.info("Get tax price");
@@ -85,6 +100,8 @@ class CheckoutPage extends BasePageFunctions {
         }
     }
 
+    /** This function returns the total price includes tax
+     * @returns {string} */
     async getItemsTotalPriceIncludeTax() {
         try {
             this.logger.info("Get items total price includes tax");
@@ -99,6 +116,11 @@ class CheckoutPage extends BasePageFunctions {
         }
     }
 
+    /** This function returns the product title according to the input numbers which specifies the order 
+     * @returns {string} 
+     * @param {number} num 
+     * @example Products = "Backpack", "BikeLight"
+     * getProductTitle(1) will returns the "Backpack" */
     async getProductTitle(num) {
         try {
             this.logger.info("Get product title from Checkout Overview");
@@ -111,6 +133,11 @@ class CheckoutPage extends BasePageFunctions {
         }
     }
 
+    /** This function returns the product description according to the input numbers which specifies the order 
+     * @returns {string} 
+     * @param {number} num 
+     * @example Products = "Description_1", "Description_2"
+     * getProductDescription(1) will returns the "Description_1" */
     async getProductDescription(num) {
         try {
             this.logger.info("Get product description from Checkout Overview");
@@ -123,6 +150,11 @@ class CheckoutPage extends BasePageFunctions {
         }
     }
 
+    /** This function returns the product price according to the input numbers which specifies the order 
+     * @returns {string} 
+     * @param {number} num 
+     * @example Products = "29.99", "79.99"
+     * getProductPrice(1) will returns the "29.99" */
     async getProductPrice(num) {
         try {
             this.logger.info("Get product price from Checkout Overview");
@@ -135,6 +167,7 @@ class CheckoutPage extends BasePageFunctions {
         }
     }
 
+    /** This function clicks on Finish button */
     async pressFinish() {
         try {
             await this.page.waitForSelector(CheckoutPageElements.Finish, { timeout: commandsTimeout });
@@ -147,6 +180,10 @@ class CheckoutPage extends BasePageFunctions {
         }
     }
 
+    /**
+     * This function returns the title from order completion 
+     * @returns {string}
+     */
     async getCompleteTitle() {
         try {
             this.logger.info(`Get the title from the order complition`);
@@ -159,6 +196,9 @@ class CheckoutPage extends BasePageFunctions {
         }
     }
 
+    /** This function returns the description from order completion 
+     * @returns {string}
+     */
     async getCompleteDescription() {
         try {
             this.logger.info(`Get the description from the order complition`);
@@ -171,6 +211,7 @@ class CheckoutPage extends BasePageFunctions {
         }
     }
 
+    /** This function clicks on Back Home button */
     async pressBackHome() {
         try {
             await this.page.waitForSelector(CheckoutPageElements.Complete.BackHomeBtn, { timeout: commandsTimeout });

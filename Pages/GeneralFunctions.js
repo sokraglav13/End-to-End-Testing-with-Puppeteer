@@ -8,6 +8,7 @@ class GeneralFunctions extends BasePageFunctions {
         this.page = page;
     }
 
+    /**This function clicks on the cart icon */
     async clickCart() {
         try {
             await this.page.waitForSelector(GeneralElements.CartBtn, { timeout: commandsTimeout });
@@ -20,6 +21,7 @@ class GeneralFunctions extends BasePageFunctions {
         }
     }
 
+    /** This functions clicks on menu button */
     async openMenu() {
         try {
             await this.page.waitForSelector(GeneralElements.MenuBtn, { timeout: commandsTimeout });
