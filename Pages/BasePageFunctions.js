@@ -163,18 +163,23 @@ class BasePageFunctions {
         }
     }
 
-    async getItemsTotalPriceIncludeTax() {
+    async getText(elem) {
         try {
-            this.logger.info("Get items total price includes tax");
-            await this.page.waitForSelector(CheckoutPageElements.TotalPriceIncludesTax, { timeout: commandsTimeout });
-            const fullText = await this.page.$eval(CheckoutPageElements.TotalPriceIncludesTax, el => el.textContent);
-            const clearValue = getClearValue(fullText);
-            return clearValue
+            this.logger.info("Get Text");
+            await this.page.waitForSelector(elem, { timeout: commandsTimeout });
+            return await this.page.$eval(elem, el => el.textContent);
         }
         catch (er) {
             this.logger.error(er);
             throw new Error(er);
         }
+    }
+
+
+    async delay(time) {
+        return new Promise(function (resolve) {
+            setTimeout(resolve, time)
+        });
     }
 }
 

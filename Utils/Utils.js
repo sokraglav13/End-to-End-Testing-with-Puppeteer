@@ -1,5 +1,6 @@
 const { Products } = require("./Dictionary");
 const { MainPageElements } = require("../WebElements/ProductsPageElements");
+const { GeneralElements } = require("../WebElements/GeneralElements");
 
 const findProductButton = (productName) => {
     if (Products.includes(productName)) {
@@ -29,4 +30,19 @@ const sortBy = (sortMethod) => {
     }
 }
 
-module.exports = { getClearValue, findProductButton, sortBy }
+const menuOption = (option) => {
+    switch (option) {
+        case 1:
+            return GeneralElements.AllItems
+        case 2:
+            return GeneralElements.About
+        case 3:
+            return GeneralElements.Logout
+        case 4:
+            return GeneralElements.ResetAppState
+        default:
+            throw new Error("Input sort methos is invalid!")
+    }
+}
+
+module.exports = { getClearValue, findProductButton, sortBy, menuOption }

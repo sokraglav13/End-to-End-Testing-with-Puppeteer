@@ -1,5 +1,7 @@
 module.exports = {
     MainPageElements: {
+        ProductsAddToCartButton: (num) => { return `::-p-xpath((//div[@class='inventory_item_description']//button)[${num}])` },
+        AllItems: "::-p-xpath(//div[@class='inventory_item'])",
         Sorting: {
             SortingBtn: ".product_sort_container",
             AZSorting: "option[value='az']",

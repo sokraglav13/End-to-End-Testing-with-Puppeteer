@@ -21,8 +21,8 @@ module.exports = {
             Description: ".complete-header",
             BackHomeBtn: "#back-to-products",
         },
-
         ContinueBtn: '#continue',
         Cancel: "#cancel",
+        Finish: "#finish"
     }
 }

@@ -129,14 +129,31 @@ class ProductsPage extends BasePageFunctions {
     async selectRandomProduct() {
         try {
             await this.page.waitForSelector(MainPageElements.AllItems, { timeout: commandsTimeout });
-            const allItems = [await this.page.$$(MainPageElements.AllItems)]
-            console.log(`AllItems-> ${allItems}`)
-            let kati = Object.entries(allItems)
-            console.log(kati[0][1], "------------------------------")
-            const productSelection = Math.floor(Math.random() * kati[0][1].length) + 1
-            console.log(`ProductItem-> ${productSelection}`)
+            const allItems = await this.page.$$(MainPageElements.AllItems)
+            let Products = Object.entries(allItems)
+            const productSelection = Math.floor(Math.random() * Products.length) + 1
             await this.page.click(MainPageElements.ProductsAddToCartButton(productSelection));
-            this.logger.info("Click on a random product");
+            this.logger.info("Click add to cart button for one random products");
+        }
+        catch (er) {
+            this.logger.error(er);
+            throw new Error(er);
+        }
+    }
+
+    async selectTwoRandomProducts() {
+        try {
+            await this.page.waitForSelector(MainPageElements.AllItems, { timeout: commandsTimeout });
+            const allItems = await this.page.$$(MainPageElements.AllItems)
+            let Products = Object.entries(allItems)
+            const firstRandomProduct = Math.floor(Math.random() * Products.length)
+            const selectFirstProduct = Number(Products[firstRandomProduct][0]) + 1
+            await this.page.click(MainPageElements.ProductsAddToCartButton(selectFirstProduct));
+            Products.splice([firstRandomProduct], 1)
+            const secondRandomProduct = Math.floor(Math.random() * Products.length)
+            const selectSecondProduct = Number(Products[secondRandomProduct][0]) + 1
+            await this.page.click(MainPageElements.ProductsAddToCartButton(selectSecondProduct));
+            this.logger.info("Click add to cart button for two random products");
         }
         catch (er) {
             this.logger.error(er);
