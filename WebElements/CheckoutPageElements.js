@@ -18,7 +18,7 @@ module.exports = {
         },
         Complete: {
             Title: ".complete-header",
-            Description: ".complete-header",
+            Description: ".complete-text",
             BackHomeBtn: "#back-to-products",
         },
         ContinueBtn: '#continue',

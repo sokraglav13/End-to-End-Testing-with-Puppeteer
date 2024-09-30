@@ -131,6 +131,14 @@ class BasePageFunctions {
             setTimeout(resolve, time)
         });
     }
+
+    async isElementVisible(element) {
+        const elementHandle = await this.page.$(element)
+        return await elementHandle.evaluate((element) => {
+            const style = window.getComputedStyle(element);
+            return style && style.display !== 'none' && style.visibility !== 'hidden' && style.opacity !== '0';
+        });
+    }
 }
 
 module.exports = BasePageFunctions;

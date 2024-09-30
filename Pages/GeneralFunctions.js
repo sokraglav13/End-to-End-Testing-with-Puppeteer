@@ -1,6 +1,7 @@
 const BasePageFunctions = require("./BasePageFunctions")
 const { GeneralElements } = require("../WebElements/GeneralElements")
 const { menuOption } = require("../Utils/Utils");
+const { commandsTimeout } = require("../config");
 
 class GeneralFunctions extends BasePageFunctions {
     constructor(logger, page) {

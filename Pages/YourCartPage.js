@@ -1,5 +1,6 @@
 const BasePageFunctions = require("../Pages/BasePageFunctions");
 const { CartPageElements } = require("../WebElements/YourCartPageElements");
+const { commandsTimeout } = require("../config");
 
 
 class YourCartPage extends BasePageFunctions {

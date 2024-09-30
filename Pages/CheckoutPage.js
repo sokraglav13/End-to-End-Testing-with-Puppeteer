@@ -1,6 +1,7 @@
 const BasePageFunctions = require("../Pages/BasePageFunctions");
 const { CheckoutPageElements } = require("../WebElements/CheckoutPageElements");
 const { getClearValue } = require("../Utils/Utils");
+const { commandsTimeout } = require("../config")
 
 class CheckoutPage extends BasePageFunctions {
     constructor(logger, page) {

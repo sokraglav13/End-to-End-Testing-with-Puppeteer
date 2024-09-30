@@ -1,31 +1,22 @@
 const { baseUrl, timeoutTest } = require("../config");
 const BasePageFunctions = require("../Pages/BasePageFunctions");
 const LoginPage = require("../Pages/LoginPage")
-const ProductsPage = require("../Pages/ProductsPage")
-const GeneralFunctions = require("../Pages/GeneralFunctions");
-const YourCartPage = require("../Pages/YourCartPage");
-const CheckoutPage = require("../Pages/CheckoutPage");
+const { MainPageElements } = require("../WebElements/ProductsPageElements")
 const { NormalAccount, Password } = require("../TestData/Accounts");
-const { ExpectedResults } = require("../TestData/Test-1-Data").Test1Data;
 const loggerFactory = require("../Logger/Logger");
 const { assert } = require("chai");
-const testName = "Test-1";
+const testName = "Test-3";
 const { startRecording, stopRecording } = require("../VideoRecorder/videoRecorder");
 
-describe(testName, function () {
-    let basePageFunctions, loginPage, productsPage, generalFunctions, yourCartPage, checkoutPage;
+describe("Test 3", function () {
+    let basePageFunctions, loginPage;
     let logger = loggerFactory(testName)
-
     before(async function () {
         this.timeout(timeoutTest);
         logger.startLoggin(testName);
         basePageFunctions = new BasePageFunctions(logger);
         await basePageFunctions.launchBrowser();
         loginPage = new LoginPage(logger, basePageFunctions.getPage())
-        productsPage = new ProductsPage(logger, basePageFunctions.getPage())
-        generalFunctions = new GeneralFunctions(logger, basePageFunctions.getPage())
-        yourCartPage = new YourCartPage(logger, basePageFunctions.getPage())
-        checkoutPage = new CheckoutPage(logger, basePageFunctions.getPage())
         // await startRecording(await basePageFunctions.getPage(), testName);
     });
 
@@ -36,16 +27,16 @@ describe(testName, function () {
         logger.endLoggin(testName);
     });
 
-    it("Complete Order - Empty Information Form - Fail", async function () {
+    it("Login - Valid Credentails - Success", async function () {
         this.timeout(timeoutTest);
         await basePageFunctions.openUrl(baseUrl);
         await basePageFunctions.setFullscreen();
         await loginPage.login(NormalAccount.Username, Password);
-        await productsPage.selectRandomProduct();
-        await generalFunctions.clickCart();
-        await yourCartPage.pressCheckout();
-        await checkoutPage.pressContinue();
-        const actualResult = await checkoutPage.getErrorMessage();
-        assert.equal(actualResult, ExpectedResults.ErrorMessage);
+        const actualPageTitle = await basePageFunctions.isElementVisible(MainPageElements.PageTitle);
+        const actualAllItems = await basePageFunctions.isElementVisible(MainPageElements.AllItems);
+        const actualSortingBtn = await basePageFunctions.isElementVisible(MainPageElements.Sorting.SortingBtn);
+        assert.isTrue(actualPageTitle)
+        assert.isTrue(actualAllItems)
+        assert.isTrue(actualSortingBtn)
     });
 });

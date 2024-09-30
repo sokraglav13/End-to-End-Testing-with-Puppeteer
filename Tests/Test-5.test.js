@@ -6,10 +6,10 @@ const GeneralFunctions = require("../Pages/GeneralFunctions");
 const YourCartPage = require("../Pages/YourCartPage");
 const CheckoutPage = require("../Pages/CheckoutPage");
 const { NormalAccount, Password } = require("../TestData/Accounts");
-const { ExpectedResults } = require("../TestData/Test-2-Data").Test2Data;
+const { SortBy } = require("../TestData/Test-5-Data").Test5Data;
 const loggerFactory = require("../Logger/Logger");
 const { assert } = require("chai");
-const testName = "Test-2";
+const testName = "Test-5";
 const { startRecording, stopRecording } = require("../VideoRecorder/videoRecorder");
 
 describe(testName, function () {
@@ -41,7 +41,7 @@ describe(testName, function () {
         await basePageFunctions.openUrl(baseUrl);
         await basePageFunctions.setFullscreen();
         await loginPage.login(NormalAccount.Username, Password);
-        await productsPage.selectTwoRandomProducts();
+        await productsPage.sortProductsBy(SortBy.NameAZ);
         await generalFunctions.clickCart();
         await yourCartPage.pressCheckout();
         await checkoutPage.fillInformationForm("example", "example", "example")
