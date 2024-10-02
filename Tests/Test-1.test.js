@@ -6,7 +6,7 @@ const GeneralFunctions = require("../Pages/GeneralFunctions");
 const YourCartPage = require("../Pages/YourCartPage");
 const CheckoutPage = require("../Pages/CheckoutPage");
 const { NormalAccount, Password } = require("../TestData/Accounts");
-const { ExpectedResults } = require("../TestData/Test-1-Data").Test1Data;
+const { ExpectedResults, FirstName, LastName, PostalCode, EmptyString } = require("../TestData/Test-1-Data").Test1Data;
 const loggerFactory = require("../Logger/Logger");
 const { assert } = require("chai");
 const testName = "Test-1";
@@ -36,7 +36,7 @@ describe(testName, function () {
         logger.endLoggin(testName);
     });
 
-    it("Complete Order - Empty Information Form - Fail", async function () {
+    it("Complete Order - Empty Form Fields - Fail", async function () {
         this.timeout(timeoutTest);
         await basePageFunctions.openUrl(baseUrl);
         await basePageFunctions.setFullscreen();
@@ -45,7 +45,19 @@ describe(testName, function () {
         await generalFunctions.clickCart();
         await yourCartPage.pressCheckout();
         await checkoutPage.pressContinue();
-        const actualResult = await checkoutPage.getErrorMessage();
-        assert.equal(actualResult, ExpectedResults.ErrorMessage);
+        const actualResultEmptyAllFields = await checkoutPage.getErrorMessage();
+        await checkoutPage.fillInformationForm(FirstName, LastName, EmptyString)
+        await checkoutPage.pressContinue();
+        const actualResultWithEmptyPostalCode = await checkoutPage.getErrorMessage();
+        await checkoutPage.fillInformationForm(FirstName, EmptyString, PostalCode)
+        await checkoutPage.pressContinue();
+        const actualResultWithEmptyLastName = await checkoutPage.getErrorMessage();
+        await checkoutPage.fillInformationForm(EmptyString, LastName, PostalCode)
+        await checkoutPage.pressContinue();
+        const actualResultWithEmptyFirstName = await checkoutPage.getErrorMessage();
+        assert.equal(actualResultEmptyAllFields, ExpectedResults.FirstnameErrorMessage);
+        assert.equal(actualResultWithEmptyPostalCode, ExpectedResults.PostalCodeErrorMessage);
+        assert.equal(actualResultWithEmptyLastName, ExpectedResults.LastnameErrorMessage);
+        assert.equal(actualResultWithEmptyFirstName, ExpectedResults.FirstnameErrorMessage);
     });
 });

@@ -122,6 +122,26 @@ class BasePageFunctions {
         }
     }
 
+    /** This function clears the textfield of input element
+    * @param {Element} element 
+   */
+    async clearField(element) {
+        try {
+            this.logger.info("Clear the textfield");
+            await this.page.waitForSelector(element, { timeout: commandsTimeout });
+            const inputField = await this.page.$(element);
+            await inputField.click()
+            await this.page.keyboard.down('Control');
+            await this.page.keyboard.press('A');
+            await this.page.keyboard.up('Control');
+            await this.page.keyboard.press('Backspace');
+        }
+        catch (er) {
+            this.logger.error(er);
+            throw new Error(er);
+        }
+    }
+
     /** This function delays the execution by input value
      * @param {number} time 
      */

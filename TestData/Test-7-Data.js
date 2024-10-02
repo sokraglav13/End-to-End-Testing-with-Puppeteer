@@ -1,16 +1,13 @@
 module.exports = {
-    Test2Data: {
-        Firstname: "Sokratis",
-        Lastname: "Glavinas",
-        PostalCode: "12345",
+    Test7Data: {
+        FormInfo: {
+            Firstname: "Sokratis",
+            Lastname: "Glavinas",
+            PostalCode: "12345"
+        },
         ExpectedResults: {
-            BackpackTitle: "Sauce Labs Backpack",
-            BackpackPrice: "$29.99",
-            BikeLightTitle: "Sauce Labs Bike Light",
-            BikeLightPrice: "$9.99",
-            TaxPrice: "$3.20",
-            ItemsTotalPrice: "$39.98",
-            TotalPriceIncludeTax: "$43.18",
+            Title: "Thank you for your order!",
+            Description: "Your order has been dispatched, and will arrive just as fast as the pony can get there!"
         }
 
     }

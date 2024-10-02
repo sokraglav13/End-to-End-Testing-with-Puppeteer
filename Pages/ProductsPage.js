@@ -1,7 +1,7 @@
 const BasePageFunctions = require("./BasePageFunctions");
 const { MainPageElements } = require("../WebElements/ProductsPageElements");
 const { GeneralElements } = require("../WebElements/GeneralElements");
-const { findProductButton, sortBy } = require("../Utils/Utils");
+const { findProductButton, sortByMethod } = require("../Utils/Utils");
 const { commandsTimeout } = require("../config")
 
 class ProductsPage extends BasePageFunctions {
@@ -69,9 +69,8 @@ class ProductsPage extends BasePageFunctions {
         try {
             await this.page.waitForSelector(MainPageElements.Sorting.SortingBtn, { timeout: commandsTimeout });
             await this.page.click(MainPageElements.Sorting.SortingBtn);
-            const sortElement = sortBy(sortMethod)
-            await this.page.click(sortElement)
-            this.logger.info(`Product list have beed sorted by ${sortBy} method`);
+            await this.page.select(MainPageElements.Sorting.SortingMethodsSelect, sortMethod)
+            this.logger.info(`Product list have beed sorted by ${sortMethod} method`);
         }
         catch (er) {
             this.logger.error(er);
@@ -95,6 +94,40 @@ class ProductsPage extends BasePageFunctions {
             await this.page.waitForSelector(productElements.Title, { timeout: commandsTimeout });
             await this.page.click(productElements.Title);
             this.logger.info(`Click on title for ${productName} Item`);
+        }
+        catch (er) {
+            this.logger.error(er);
+            throw new Error(er);
+        }
+    }
+
+    async getAllProductTitles() {
+        try {
+            await this.page.waitForSelector(MainPageElements.AllItems, { timeout: commandsTimeout });
+            const productElem = await this.page.$$(MainPageElements.AllItems);
+            let productArr = []
+            for (let i = 1; i < productElem.length + 1; i++) {
+                productArr.push(await this.page.$eval(MainPageElements.ProductTitle(i), el => el.textContent));
+            }
+            this.logger.info(`Get & Return all products title`);
+            return productArr
+        }
+        catch (er) {
+            this.logger.error(er);
+            throw new Error(er);
+        }
+    }
+
+    async getAllProductPrices() {
+        try {
+            await this.page.waitForSelector(MainPageElements.AllItems, { timeout: commandsTimeout });
+            const productElem = await this.page.$$(MainPageElements.AllItems);
+            let productArr = []
+            for (let i = 1; i < productElem.length + 1; i++) {
+                productArr.push(await this.page.$eval(MainPageElements.ProductPrice(i), el => el.textContent));
+            }
+            this.logger.info(`Get & Return all products prices`);
+            return productArr
         }
         catch (er) {
             this.logger.error(er);

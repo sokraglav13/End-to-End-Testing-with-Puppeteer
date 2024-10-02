@@ -18,6 +18,9 @@ class CheckoutPage extends BasePageFunctions {
     async fillInformationForm(firstname, lastname, postalcode) {
         try {
             await this.page.waitForSelector(CheckoutPageElements.YourInformation.FirstnameField, { timeout: commandsTimeout });
+            await this.clearField(CheckoutPageElements.YourInformation.FirstnameField)
+            await this.clearField(CheckoutPageElements.YourInformation.LastnameField)
+            await this.clearField(CheckoutPageElements.YourInformation.ZipcodeField)
             await this.page.type(CheckoutPageElements.YourInformation.FirstnameField, firstname);
             await this.page.type(CheckoutPageElements.YourInformation.LastnameField, lastname);
             await this.page.type(CheckoutPageElements.YourInformation.ZipcodeField, postalcode);

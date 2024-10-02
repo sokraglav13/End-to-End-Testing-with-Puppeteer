@@ -6,7 +6,7 @@ const GeneralFunctions = require("../Pages/GeneralFunctions");
 const YourCartPage = require("../Pages/YourCartPage");
 const CheckoutPage = require("../Pages/CheckoutPage");
 const { NormalAccount, Password } = require("../TestData/Accounts");
-const { SortBy } = require("../TestData/Test-5-Data").Test5Data;
+const { SortByMethod, ProductList } = require("../TestData/Test-5-Data").Test5Data;
 const loggerFactory = require("../Logger/Logger");
 const { assert } = require("chai");
 const testName = "Test-5";
@@ -36,20 +36,22 @@ describe(testName, function () {
         logger.endLoggin(testName);
     });
 
-    it("Complete Order - Two Random Products - Success", async function () {
+    it("Sorting - By Name & Price - Success", async function () {
         this.timeout(timeoutTest);
         await basePageFunctions.openUrl(baseUrl);
         await basePageFunctions.setFullscreen();
         await loginPage.login(NormalAccount.Username, Password);
-        await productsPage.sortProductsBy(SortBy.NameAZ);
-        await generalFunctions.clickCart();
-        await yourCartPage.pressCheckout();
-        await checkoutPage.fillInformationForm("example", "example", "example")
-        await checkoutPage.pressContinue();
-        await checkoutPage.pressFinish();
-        const ActualOrderTitle = await checkoutPage.getCompleteTitle()
-        const ActualOrderDescription = await checkoutPage.getCompleteDescription()
-        assert.equal(ActualOrderTitle, ExpectedResults.OrderTitle)
-        assert.equal(ActualOrderDescription, ExpectedResults.OrderDescription);
+        await productsPage.sortProductsBy(SortByMethod.NameAZ);
+        const actaulProductSortedByNameAZ = await productsPage.getAllProductTitles()
+        await productsPage.sortProductsBy(SortByMethod.NameZA);
+        const actaulProductSortedByNameZA = await productsPage.getAllProductTitles()
+        await productsPage.sortProductsBy(SortByMethod.PriceLoHi);
+        const actaulProductSortedByPriceLoHi = await productsPage.getAllProductPrices()
+        await productsPage.sortProductsBy(SortByMethod.PriceHiLo);
+        const actaulProductSortedByPriceHiLo = await productsPage.getAllProductPrices()
+        assert.deepEqual(actaulProductSortedByNameAZ, ProductList.SortedByNameAZ)
+        assert.deepEqual(actaulProductSortedByNameZA, ProductList.SortedByNameZA)
+        assert.deepEqual(actaulProductSortedByPriceLoHi, ProductList.SortedByPriceLoHi)
+        assert.deepEqual(actaulProductSortedByPriceHiLo, ProductList.SortedByPriceHiLo)
     });
 });
