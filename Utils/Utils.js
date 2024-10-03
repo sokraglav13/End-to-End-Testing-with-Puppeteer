@@ -15,7 +15,7 @@ const getClearValue = (value) => {
     return match ? match[0] : null;
 }
 
-const sortBy = (sortMethod) => {
+const sortByMethod = (sortMethod) => {
     switch (sortMethod) {
         case "NameAZ":
             return MainPageElements.Sorting.AZSorting
@@ -45,4 +45,4 @@ const menuOption = (option) => {
     }
 }
 
-module.exports = { getClearValue, findProductButton, sortBy, menuOption }
+module.exports = { getClearValue, findProductButton, sortByMethod, menuOption }

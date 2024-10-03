@@ -6,7 +6,7 @@ const GeneralFunctions = require("../Pages/GeneralFunctions");
 const YourCartPage = require("../Pages/YourCartPage");
 const CheckoutPage = require("../Pages/CheckoutPage");
 const { NormalAccount, Password } = require("../TestData/Accounts");
-const { ExpectedResults } = require("../TestData/Test-2-Data").Test2Data;
+const { ExpectedResults, Firstname, Lastname, PostalCode } = require("../TestData/Test-2-Data").Test2Data;
 const loggerFactory = require("../Logger/Logger");
 const { assert } = require("chai");
 const testName = "Test-2";
@@ -26,13 +26,13 @@ describe(testName, function () {
         generalFunctions = new GeneralFunctions(logger, basePageFunctions.getPage())
         yourCartPage = new YourCartPage(logger, basePageFunctions.getPage())
         checkoutPage = new CheckoutPage(logger, basePageFunctions.getPage())
-        // await startRecording(await basePageFunctions.getPage(), testName);
+        await startRecording(await basePageFunctions.getPage(), testName);
     });
 
     after(async function () {
         this.timeout(timeoutTest);
         await basePageFunctions.quit();
-        // await stopRecording();
+        await stopRecording();
         logger.endLoggin(testName);
     });
 
@@ -44,7 +44,7 @@ describe(testName, function () {
         await productsPage.selectTwoRandomProducts();
         await generalFunctions.clickCart();
         await yourCartPage.pressCheckout();
-        await checkoutPage.fillInformationForm("example", "example", "example")
+        await checkoutPage.fillInformationForm(Firstname, Lastname, PostalCode)
         await checkoutPage.pressContinue();
         await checkoutPage.pressFinish();
         const ActualOrderTitle = await checkoutPage.getCompleteTitle()

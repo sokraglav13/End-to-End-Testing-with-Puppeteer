@@ -26,13 +26,13 @@ describe(testName, function () {
         productsPage = new ProductsPage(logger, basePageFunctions.getPage())
         yourCartPage = new YourCartPage(logger, basePageFunctions.getPage())
         checkoutPage = new CheckoutPage(logger, basePageFunctions.getPage())
-        // await startRecording(await basePageFunctions.getPage(), testName);
+        await startRecording(await basePageFunctions.getPage(), testName);
     });
 
     after(async function () {
         this.timeout(timeoutTest);
         await basePageFunctions.quit();
-        // await stopRecording();
+        await stopRecording();
         logger.endLoggin(testName);
     });
 

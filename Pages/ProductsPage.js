@@ -1,7 +1,6 @@
 const BasePageFunctions = require("./BasePageFunctions");
 const { MainPageElements } = require("../WebElements/ProductsPageElements");
-const { GeneralElements } = require("../WebElements/GeneralElements");
-const { findProductButton, sortByMethod } = require("../Utils/Utils");
+const { findProductButton } = require("../Utils/Utils");
 const { commandsTimeout } = require("../config")
 
 class ProductsPage extends BasePageFunctions {

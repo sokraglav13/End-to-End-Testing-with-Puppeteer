@@ -11,19 +11,20 @@ const { startRecording, stopRecording } = require("../VideoRecorder/videoRecorde
 describe(testName, function () {
     let basePageFunctions, loginPage;
     let logger = loggerFactory(testName)
+
     before(async function () {
         this.timeout(timeoutTest);
         logger.startLoggin(testName);
         basePageFunctions = new BasePageFunctions(logger);
         await basePageFunctions.launchBrowser();
         loginPage = new LoginPage(logger, basePageFunctions.getPage())
-        // await startRecording(await basePageFunctions.getPage(), testName);
+        await startRecording(await basePageFunctions.getPage(), testName);
     });
 
     after(async function () {
         this.timeout(timeoutTest);
         await basePageFunctions.quit();
-        // await stopRecording();
+        await stopRecording();
         logger.endLoggin(testName);
     });
 

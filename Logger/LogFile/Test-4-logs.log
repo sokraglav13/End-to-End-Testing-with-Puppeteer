@@ -1,0 +1,19 @@
+2024-09-18 13:21:18 info: ------------------- TEST EXECUTION STARTED FOR Test-4 -------------------
+2024-09-18 13:21:22 info: Browser launched successfully
+2024-09-18 13:21:24 info: Open url
+2024-09-18 13:21:24 info: Fullscreen size set
+2024-09-18 13:21:28 info: Login action
+2024-09-18 13:21:28 info: Get Error code from Login Page
+2024-09-18 13:21:28 error: ReferenceError: commandsTimeout is not defined
+    at LoginPage.getErrorMessage (C:\Users\SokratisGlavinas\Downloads\newproject\Pages\LoginPage.js:31:88)
+    at Context.<anonymous> (C:\Users\SokratisGlavinas\Downloads\newproject\Tests\Test-4.test.js:35:47)
+2024-09-18 13:21:28 info: Browser Closed
+2024-09-18 13:21:28 info: ------------------- TEST EXECUTION FINISHED FOR Test-4 ------------------
+2024-09-18 13:22:42 info: ------------------- TEST EXECUTION STARTED FOR Test-4 -------------------
+2024-09-18 13:22:44 info: Browser launched successfully
+2024-09-18 13:22:46 info: Open url
+2024-09-18 13:22:46 info: Fullscreen size set
+2024-09-18 13:22:50 info: Login action
+2024-09-18 13:22:50 info: Get Error code from Login Page
+2024-09-18 13:22:50 info: Browser Closed
+2024-09-18 13:22:50 info: ------------------- TEST EXECUTION FINISHED FOR Test-4 ------------------

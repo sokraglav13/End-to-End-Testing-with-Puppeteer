@@ -1,0 +1,81 @@
+2024-10-02 17:37:10 info: ------------------- TEST EXECUTION STARTED FOR Test-7 -------------------
+2024-10-02 17:37:11 info: Browser launched successfully
+2024-10-02 17:37:14 info: Open url
+2024-10-02 17:37:14 info: Fullscreen size set
+2024-10-02 17:37:18 info: Login action
+2024-10-02 17:37:18 info: Browser Closed
+2024-10-02 17:37:18 info: ------------------- TEST EXECUTION FINISHED FOR Test-7 ------------------
+2024-10-02 17:39:33 info: ------------------- TEST EXECUTION STARTED FOR Test-7 -------------------
+2024-10-02 17:39:36 info: Browser launched successfully
+2024-10-02 17:39:38 info: Open url
+2024-10-02 17:39:38 info: Fullscreen size set
+2024-10-02 17:39:42 info: Login action
+2024-10-02 17:39:44 info: Click add to cart button for two random products
+2024-10-02 17:39:45 info: Click on cart button
+2024-10-02 17:39:45 info: Click on Checkout button
+2024-10-02 17:39:46 info: Clear the textfield
+2024-10-02 17:39:46 info: Clear the textfield
+2024-10-02 17:39:48 info: Clear the textfield
+2024-10-02 17:39:51 info: Fill the information form with Firstname, Lastname and Postal Code
+2024-10-02 17:39:52 info: Click on Continue button
+2024-10-02 17:39:52 info: Click on Cancel button
+2024-10-02 17:39:52 info: Get the title from the order complition
+2024-10-02 17:39:53 info: Get the description from the order complition
+2024-10-02 17:39:54 info: Browser Closed
+2024-10-02 17:39:54 info: ------------------- TEST EXECUTION FINISHED FOR Test-7 ------------------
+2024-10-02 18:22:32 info: ------------------- TEST EXECUTION STARTED FOR Test-7 -------------------
+2024-10-02 18:22:35 info: Browser launched successfully
+2024-10-02 18:22:38 info: Open url
+2024-10-02 18:22:38 info: Fullscreen size set
+2024-10-02 18:22:42 info: Login action
+2024-10-02 18:22:43 info: Click on Add to Cart button for Backpack Item
+2024-10-02 18:22:43 info: Click on cart button
+2024-10-02 18:22:44 info: Click on Checkout button
+2024-10-02 18:22:44 info: Browser Closed
+2024-10-02 18:22:44 info: ------------------- TEST EXECUTION FINISHED FOR Test-7 ------------------
+2024-10-02 18:22:59 info: ------------------- TEST EXECUTION STARTED FOR Test-7 -------------------
+2024-10-02 18:23:00 info: Browser launched successfully
+2024-10-02 18:23:03 info: Open url
+2024-10-02 18:23:03 info: Fullscreen size set
+2024-10-02 18:23:07 info: Login action
+2024-10-02 18:23:08 info: Click on Add to Cart button for Backpack Item
+2024-10-02 18:23:08 info: Click on cart button
+2024-10-02 18:23:09 info: Click on Checkout button
+2024-10-02 18:23:09 info: Clear the textfield
+2024-10-02 18:23:10 info: Clear the textfield
+2024-10-02 18:23:10 info: Clear the textfield
+2024-10-02 18:23:14 info: Fill the information form with Firstname, Lastname and Postal Code
+2024-10-02 18:23:14 info: Click on Continue button
+2024-10-02 18:23:14 info: Get items total price
+2024-10-02 18:23:14 error: TypeError: Cannot read properties of undefined (reading 'startsWith')
+    at getQueryHandlerAndSelector (C:\Users\SokratisGlavinas\Downloads\newproject\node_modules\puppeteer-core\lib\cjs\puppeteer\common\GetQueryHandler.js:37:30)
+    at CdpFrame.waitForSelector (C:\Users\SokratisGlavinas\Downloads\newproject\node_modules\puppeteer-core\lib\cjs\puppeteer\api\Frame.js:522:116)
+    at CdpFrame.<anonymous> (C:\Users\SokratisGlavinas\Downloads\newproject\node_modules\puppeteer-core\lib\cjs\puppeteer\util\decorators.js:98:27)
+    at CdpPage.waitForSelector (C:\Users\SokratisGlavinas\Downloads\newproject\node_modules\puppeteer-core\lib\cjs\puppeteer\api\Page.js:1368:43)
+    at CheckoutPage.getItemsTotal (C:\Users\SokratisGlavinas\Downloads\newproject\Pages\CheckoutPage.js:80:29)
+    at Context.<anonymous> (C:\Users\SokratisGlavinas\Downloads\newproject\Tests\Test-8.test.js:49:60)
+2024-10-02 18:23:15 info: Browser Closed
+2024-10-02 18:23:15 info: ------------------- TEST EXECUTION FINISHED FOR Test-7 ------------------
+2024-10-03 11:48:51 info: ------------------- TEST EXECUTION STARTED FOR Test-7 -------------------
+2024-10-03 11:49:03 info: Browser launched successfully
+2024-10-03 11:49:06 info: Open url
+2024-10-03 11:49:06 info: Fullscreen size set
+2024-10-03 11:49:08 info: Login action
+2024-10-03 11:49:09 info: Click on Add to Cart button for Backpack Item
+2024-10-03 11:49:09 info: Click on cart button
+2024-10-03 11:49:10 info: Click on Checkout button
+2024-10-03 11:49:10 info: Clear the textfield
+2024-10-03 11:49:11 info: Clear the textfield
+2024-10-03 11:49:11 info: Clear the textfield
+2024-10-03 11:49:14 info: Fill the information form with Firstname, Lastname and Postal Code
+2024-10-03 11:49:14 info: Click on Continue button
+2024-10-03 11:49:14 info: Get items total price
+2024-10-03 11:49:14 error: TypeError: Cannot read properties of undefined (reading 'startsWith')
+    at getQueryHandlerAndSelector (C:\Users\SokratisGlavinas\Downloads\newproject\node_modules\puppeteer-core\lib\cjs\puppeteer\common\GetQueryHandler.js:37:30)
+    at CdpFrame.waitForSelector (C:\Users\SokratisGlavinas\Downloads\newproject\node_modules\puppeteer-core\lib\cjs\puppeteer\api\Frame.js:522:116)
+    at CdpFrame.<anonymous> (C:\Users\SokratisGlavinas\Downloads\newproject\node_modules\puppeteer-core\lib\cjs\puppeteer\util\decorators.js:98:27)
+    at CdpPage.waitForSelector (C:\Users\SokratisGlavinas\Downloads\newproject\node_modules\puppeteer-core\lib\cjs\puppeteer\api\Page.js:1368:43)
+    at CheckoutPage.getItemsTotal (C:\Users\SokratisGlavinas\Downloads\newproject\Pages\CheckoutPage.js:80:29)
+    at Context.<anonymous> (C:\Users\SokratisGlavinas\Downloads\newproject\Tests\Test-8.test.js:49:60)
+2024-10-03 11:49:14 info: Browser Closed
+2024-10-03 11:49:14 info: ------------------- TEST EXECUTION FINISHED FOR Test-7 ------------------

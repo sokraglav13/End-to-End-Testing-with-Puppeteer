@@ -8,22 +8,23 @@ const { assert } = require("chai");
 const testName = "Test-3";
 const { startRecording, stopRecording } = require("../VideoRecorder/videoRecorder");
 
-describe("Test 3", function () {
+describe(testName, function () {
     let basePageFunctions, loginPage;
     let logger = loggerFactory(testName)
+
     before(async function () {
         this.timeout(timeoutTest);
         logger.startLoggin(testName);
         basePageFunctions = new BasePageFunctions(logger);
         await basePageFunctions.launchBrowser();
         loginPage = new LoginPage(logger, basePageFunctions.getPage())
-        // await startRecording(await basePageFunctions.getPage(), testName);
+        await startRecording(await basePageFunctions.getPage(), testName);
     });
 
     after(async function () {
         this.timeout(timeoutTest);
         await basePageFunctions.quit();
-        // await stopRecording();
+        await stopRecording();
         logger.endLoggin(testName);
     });
 

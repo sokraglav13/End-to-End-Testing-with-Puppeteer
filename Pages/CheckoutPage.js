@@ -77,8 +77,8 @@ class CheckoutPage extends BasePageFunctions {
     async getItemsTotal() {
         try {
             this.logger.info("Get items total price");
-            await this.page.waitForSelector(CheckoutPageElements.PriceTotal, { timeout: commandsTimeout });
-            const fullText = await this.page.$eval(CheckoutPageElements.PriceTotal, el => el.textContent);
+            await this.page.waitForSelector(CheckoutPageElements.Overview.PriceTotal, { timeout: commandsTimeout });
+            const fullText = await this.page.$eval(CheckoutPageElements.Overview.PriceTotal, el => el.textContent);
             const clearValue = getClearValue(fullText);
             return clearValue
         }
@@ -93,8 +93,8 @@ class CheckoutPage extends BasePageFunctions {
     async getItemsTax() {
         try {
             this.logger.info("Get tax price");
-            await this.page.waitForSelector(CheckoutPageElements.TaxPrice, { timeout: commandsTimeout });
-            const fullText = await this.page.$eval(CheckoutPageElements.TaxPrice, el => el.textContent);
+            await this.page.waitForSelector(CheckoutPageElements.Overview.TaxPrice, { timeout: commandsTimeout });
+            const fullText = await this.page.$eval(CheckoutPageElements.Overview.TaxPrice, el => el.textContent);
             const clearValue = getClearValue(fullText);
             return clearValue
         }
@@ -109,8 +109,8 @@ class CheckoutPage extends BasePageFunctions {
     async getItemsTotalPriceIncludeTax() {
         try {
             this.logger.info("Get items total price includes tax");
-            await this.page.waitForSelector(CheckoutPageElements.TotalPriceIncludesTax, { timeout: commandsTimeout });
-            const fullText = await this.page.$eval(CheckoutPageElements.TotalPriceIncludesTax, el => el.textContent);
+            await this.page.waitForSelector(CheckoutPageElements.Overview.TotalPriceIncludesTax, { timeout: commandsTimeout });
+            const fullText = await this.page.$eval(CheckoutPageElements.Overview.TotalPriceIncludesTax, el => el.textContent);
             const clearValue = getClearValue(fullText);
             return clearValue
         }

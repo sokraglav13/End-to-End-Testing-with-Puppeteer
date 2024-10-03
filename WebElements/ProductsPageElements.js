@@ -2,9 +2,12 @@ module.exports = {
     MainPageElements: {
         PageTitle: ".title",
         ProductsAddToCartButton: (num) => { return `::-p-xpath((//div[@class='inventory_item_description']//button)[${num}])` },
+        ProductTitle: (num) => { return `::-p-xpath(//div[@class='inventory_item'][${num}]//div[@class='inventory_item_name '])` },
+        ProductPrice: (num) => { return `::-p-xpath(//div[@class='inventory_item'][${num}]//div[@class='inventory_item_price'])` },
         AllItems: "::-p-xpath(//div[@class='inventory_item'])",
         Sorting: {
             SortingBtn: ".product_sort_container",
+            SortingMethodsSelect: 'select[data-test="product-sort-container"]',
             AZSorting: "option[value='az']",
             ZASorting: "option[value='za']",
             lohiSorting: "option[value='lohi']",
