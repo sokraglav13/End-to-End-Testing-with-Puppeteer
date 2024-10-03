@@ -176,7 +176,7 @@ class CheckoutPage extends BasePageFunctions {
         try {
             await this.page.waitForSelector(CheckoutPageElements.Finish, { timeout: commandsTimeout });
             await this.page.click(CheckoutPageElements.Finish);
-            this.logger.info(`Click on Cancel button`);
+            this.logger.info(`Click on Finish button`);
         }
         catch (er) {
             this.logger.error(er);

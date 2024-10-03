@@ -100,6 +100,7 @@ class ProductsPage extends BasePageFunctions {
         }
     }
 
+    /** This function returns all product titles in array */
     async getAllProductTitles() {
         try {
             await this.page.waitForSelector(MainPageElements.AllItems, { timeout: commandsTimeout });
@@ -117,6 +118,7 @@ class ProductsPage extends BasePageFunctions {
         }
     }
 
+    /** This function returns all product prices in array */
     async getAllProductPrices() {
         try {
             await this.page.waitForSelector(MainPageElements.AllItems, { timeout: commandsTimeout });
