@@ -11,7 +11,8 @@ export default [
       globals: {
         __dirname: "readable",
         setTimeout: "readable",
-        window: "readable"
+        window: "readable",
+        process: "readable"
       }
     }
   },

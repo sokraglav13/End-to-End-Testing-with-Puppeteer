@@ -1,3 +1,5 @@
+// const isCI = process.env.CI
+
 module.exports = {
     /**Sets the base url for testing */
     baseUrl: "https://www.saucedemo.com/",
@@ -10,12 +12,14 @@ module.exports = {
 
     /**Sets the browser options */
     browserConfigurations: {
-        executablePath: 'C:/Users/SokratisGlavinas/Downloads/chrome-win64_127/chrome.exe',
+        // executablePath: !isCI ? 'C:/Users/SokratisGlavinas/Downloads/chrome-win64_127/chrome.exe' : 'usr/bin/google-chrome-stable',
         headless: false,
         slowMo: 20,
         args: [
             '--start-fullscreen',
-            '--disable-notifications'
+            '--disable-notifications',
+            '--no-sandbox',                 // Required for CI environments
+            '--disable-setuid-sandbox'
         ],
     }
 }
