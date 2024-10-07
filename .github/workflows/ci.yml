@@ -64,5 +64,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: puppeteer-test-results
-          path: ./test-results/ # Make sure your test outputs are saved here
-
+          # path: ./test-results/ # Make sure your test outputs are saved here
+      - name: Display structure of downloaded files
+        run: ls -R
