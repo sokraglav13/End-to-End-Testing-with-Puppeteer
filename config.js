@@ -13,7 +13,7 @@ module.exports = {
     /**Sets the browser options */
     browserConfigurations: {
         // executablePath: !isCI ? 'C:/Users/SokratisGlavinas/Downloads/chrome-win64_127/chrome.exe' : 'usr/bin/google-chrome-stable',
-        headless: false,
+        headless: true,
         slowMo: 20,
         args: [
             '--start-fullscreen',
