@@ -70,9 +70,9 @@ jobs:
         run: npm test
 
       # Upload test results
-      - name: Upload test results
-        if: always()
-        uses: actions/upload-artifact@v2
-        with:
-          name: puppeteer-test-results
-          path: ./test-results/
+      # - name: Upload test results
+      #   if: always()
+      #   uses: actions/upload-artifact@v2
+      #   with:
+      #     name: puppeteer-test-results
+      #     path: ./test-results/
