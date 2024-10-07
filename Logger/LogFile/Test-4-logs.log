@@ -17,3 +17,11 @@
 2024-09-18 13:22:50 info: Get Error code from Login Page
 2024-09-18 13:22:50 info: Browser Closed
 2024-09-18 13:22:50 info: ------------------- TEST EXECUTION FINISHED FOR Test-4 ------------------
+2024-10-07 17:52:30 info: ------------------- TEST EXECUTION STARTED FOR Test-4 -------------------
+2024-10-07 17:52:38 info: Browser launched successfully
+2024-10-07 17:52:43 info: Open url
+2024-10-07 17:52:43 info: Fullscreen size set
+2024-10-07 17:52:50 info: Login action
+2024-10-07 17:52:50 info: Get Error code from Login Page
+2024-10-07 17:52:52 info: Browser Closed
+2024-10-07 17:52:52 info: ------------------- TEST EXECUTION FINISHED FOR Test-4 ------------------

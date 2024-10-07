@@ -26,3 +26,28 @@
 2024-09-18 12:42:11 info: Login action
 2024-09-18 12:42:12 info: Browser Closed
 2024-09-18 12:42:12 info: ------------------- TEST EXECUTION FINISHED FOR Test-3 ------------------
+2024-10-07 17:52:30 info: ------------------- TEST EXECUTION STARTED FOR Test-3 -------------------
+2024-10-07 17:52:38 info: Browser launched successfully
+2024-10-07 17:52:42 info: Open url
+2024-10-07 17:52:42 info: Fullscreen size set
+2024-10-07 17:52:47 info: Login action
+2024-10-07 17:52:50 info: Browser Closed
+2024-10-07 17:52:50 info: ------------------- TEST EXECUTION FINISHED FOR Test-3 ------------------
+2024-10-07 17:52:50 info: ------------------- TEST EXECUTION STARTED FOR Test-8 -------------------
+2024-10-07 17:52:53 info: Browser launched successfully
+2024-10-07 17:52:55 info: Open url
+2024-10-07 17:52:55 info: Fullscreen size set
+2024-10-07 17:52:58 info: Login action
+2024-10-07 17:52:59 info: Click on Add to Cart button for Backpack Item
+2024-10-07 17:52:59 info: Click on cart button
+2024-10-07 17:53:00 info: Click on Checkout button
+2024-10-07 17:53:00 info: Clear the textfield
+2024-10-07 17:53:01 info: Clear the textfield
+2024-10-07 17:53:02 info: Clear the textfield
+2024-10-07 17:53:04 info: Fill the information form with Firstname, Lastname and Postal Code
+2024-10-07 17:53:05 info: Click on Continue button
+2024-10-07 17:53:05 info: Get items total price
+2024-10-07 17:53:05 info: Get tax price
+2024-10-07 17:53:06 info: Get items total price includes tax
+2024-10-07 17:53:06 info: Browser Closed
+2024-10-07 17:53:06 info: ------------------- TEST EXECUTION FINISHED FOR Test-8 ------------------

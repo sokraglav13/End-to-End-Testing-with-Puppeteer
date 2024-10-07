@@ -25,11 +25,7 @@ jobs:
         with:
           node-version: "18.x"
 
-      # - name: Install Puppeteer dependencies
-      #   run: |
-      #     sudo apt-get update
-      #     sudo apt-get -y install libnss3-dev
-
+      # Set up dependencies
       - name: Install dependencies
         run: npm install
 
@@ -51,11 +47,7 @@ jobs:
         with:
           node-version: "18.x"
 
-      # - name: Install Puppeteer dependencies
-      #   run: |
-      #     sudo apt-get update
-      #     sudo apt-get -y install libnss3-dev
-
+      # Set up dependencies
       - name: Install dependencies
         run: npm install
 
@@ -63,10 +55,14 @@ jobs:
       - name: Run Puppeteer tests
         run: npm test
 
-      # Upload test results
-      # - name: Upload test results
-      #   if: always()
-      #   uses: actions/upload-artifact@v2
-      #   with:
-      #     name: puppeteer-test-results
-      #     path: ./test-results/
+  upload-test-results:
+    runs-on: ubuntu-latest
+    needs: test # This ensures it only runs after the 'test' job is complete
+    steps:
+      - name: Upload test results
+        if: always() # Ensures it runs even if the 'test' job fails
+        uses: actions/upload-artifact@v2
+        with:
+          name: puppeteer-test-results
+          path: ./test-results/ # Make sure your test outputs are saved here
+

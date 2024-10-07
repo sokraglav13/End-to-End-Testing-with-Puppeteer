@@ -796,3 +796,33 @@
 2024-10-07 16:39:27 info: Get the error message
 2024-10-07 16:39:28 info: Browser Closed
 2024-10-07 16:39:28 info: ------------------- TEST EXECUTION FINISHED FOR Test-1 ------------------
+2024-10-07 17:52:30 info: ------------------- TEST EXECUTION STARTED FOR Test-1 -------------------
+2024-10-07 17:52:36 info: Browser launched successfully
+2024-10-07 17:52:43 info: Open url
+2024-10-07 17:52:43 info: Fullscreen size set
+2024-10-07 17:52:50 info: Login action
+2024-10-07 17:52:51 info: Click add to cart button for one random products
+2024-10-07 17:52:52 info: Click on cart button
+2024-10-07 17:52:52 info: Click on Checkout button
+2024-10-07 17:52:53 info: Click on Continue button
+2024-10-07 17:52:53 info: Get the error message
+2024-10-07 17:52:54 info: Clear the textfield
+2024-10-07 17:52:54 info: Clear the textfield
+2024-10-07 17:52:55 info: Clear the textfield
+2024-10-07 17:52:58 info: Fill the information form with Firstname, Lastname and Postal Code
+2024-10-07 17:52:58 info: Click on Continue button
+2024-10-07 17:52:58 info: Get the error message
+2024-10-07 17:52:59 info: Clear the textfield
+2024-10-07 17:52:59 info: Clear the textfield
+2024-10-07 17:53:00 info: Clear the textfield
+2024-10-07 17:53:02 info: Fill the information form with Firstname, Lastname and Postal Code
+2024-10-07 17:53:03 info: Click on Continue button
+2024-10-07 17:53:03 info: Get the error message
+2024-10-07 17:53:04 info: Clear the textfield
+2024-10-07 17:53:04 info: Clear the textfield
+2024-10-07 17:53:05 info: Clear the textfield
+2024-10-07 17:53:07 info: Fill the information form with Firstname, Lastname and Postal Code
+2024-10-07 17:53:08 info: Click on Continue button
+2024-10-07 17:53:08 info: Get the error message
+2024-10-07 17:53:08 info: Browser Closed
+2024-10-07 17:53:08 info: ------------------- TEST EXECUTION FINISHED FOR Test-1 ------------------

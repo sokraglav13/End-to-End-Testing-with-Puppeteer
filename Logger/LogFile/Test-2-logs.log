@@ -117,3 +117,21 @@
 2024-09-30 13:12:38 info: ------------------- TEST EXECUTION FINISHED FOR Test-2 ------------------
 2024-09-30 13:21:31 info: ------------------- TEST EXECUTION STARTED FOR Test-2 -------------------
 2024-09-30 13:21:32 info: Browser launched successfully
+2024-10-07 17:52:30 info: ------------------- TEST EXECUTION STARTED FOR Test-2 -------------------
+2024-10-07 17:52:38 info: Browser launched successfully
+2024-10-07 17:52:42 info: Open url
+2024-10-07 17:52:42 info: Fullscreen size set
+2024-10-07 17:52:48 info: Login action
+2024-10-07 17:52:51 info: Click add to cart button for two random products
+2024-10-07 17:52:52 info: Click on cart button
+2024-10-07 17:52:53 info: Click on Checkout button
+2024-10-07 17:52:53 info: Clear the textfield
+2024-10-07 17:52:54 info: Clear the textfield
+2024-10-07 17:52:55 info: Clear the textfield
+2024-10-07 17:52:57 info: Fill the information form with Firstname, Lastname and Postal Code
+2024-10-07 17:52:58 info: Click on Continue button
+2024-10-07 17:52:59 info: Click on Finish button
+2024-10-07 17:52:59 info: Get the title from the order complition
+2024-10-07 17:52:59 info: Get the description from the order complition
+2024-10-07 17:53:00 info: Browser Closed
+2024-10-07 17:53:00 info: ------------------- TEST EXECUTION FINISHED FOR Test-2 ------------------
