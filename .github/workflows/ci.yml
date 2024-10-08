@@ -53,7 +53,7 @@ jobs:
 
       # Run Puppeteer tests
       - name: Run Puppeteer tests
-        run: npm test-reporter
+        run: npm run test-reporter
 
       - name: Archive Allure Results
         uses: actions/upload-artifact@v4
