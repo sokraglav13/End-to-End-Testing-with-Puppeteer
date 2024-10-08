@@ -20,6 +20,7 @@ describe(testName, function () {
         this.timeout(timeoutTest);
         logger.startLoggin(testName);
         l = "ea";
+        console.log(l);
         basePageFunctions = new BasePageFunctions(logger);
         await basePageFunctions.launchBrowser();
         loginPage = new LoginPage(logger, basePageFunctions.getPage())
