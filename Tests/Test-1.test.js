@@ -13,12 +13,13 @@ const testName = "Test-1";
 const { startRecording, stopRecording } = require("../VideoRecorder/videoRecorder");
 
 describe(testName, function () {
-    let basePageFunctions, loginPage, productsPage, generalFunctions, yourCartPage, checkoutPage;
+    let basePageFunctions, loginPage, productsPage, generalFunctions, yourCartPage, checkoutPage, l;
     let logger = loggerFactory(testName)
 
     before(async function () {
         this.timeout(timeoutTest);
         logger.startLoggin(testName);
+        l = "ea";
         basePageFunctions = new BasePageFunctions(logger);
         await basePageFunctions.launchBrowser();
         loginPage = new LoginPage(logger, basePageFunctions.getPage())
