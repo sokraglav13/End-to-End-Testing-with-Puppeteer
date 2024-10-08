@@ -12,7 +12,8 @@ export default [
         __dirname: "readable",
         setTimeout: "readable",
         window: "readable",
-        process: "readable"
+        process: "readable",
+        console: "readable"
       }
     }
   },
