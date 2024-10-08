@@ -5,7 +5,9 @@
   "type": "commonjs",
   "scripts": {
     "test": "mocha Tests/*.test.js --parallel",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "test-reporter": "mocha --parallel Tests/*.test.js --reporter allure-mocha",
+    "generate-report": "npx allure serve output/allure-results"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +22,8 @@
   },
   "devDependencies": {
     "@eslint/js": "^8.57.1",
+    "allure-commandline": "^2.30.0",
+    "allure-mocha": "^3.0.4",
     "chai": "^4.4.1",
     "eslint": "^8.57.1",
     "eslint-plugin-mocha": "^10.5.0",
