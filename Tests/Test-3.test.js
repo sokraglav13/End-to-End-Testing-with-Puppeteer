@@ -1,7 +1,7 @@
 const { baseUrl, timeoutTest } = require("../config");
 const BasePageFunctions = require("../Pages/BasePageFunctions");
-const LoginPage = require("../Pages/LoginPage")
-const { MainPageElements } = require("../WebElements/ProductsPageElements")
+const LoginPage = require("../Pages/LoginPage");
+const { MainPageElements } = require("../WebElements/ProductsPageElements");
 const { NormalAccount, Password } = require("../TestData/Accounts");
 const loggerFactory = require("../Logger/Logger");
 const { assert } = require("chai");
@@ -10,21 +10,21 @@ const { startRecording, stopRecording } = require("../VideoRecorder/videoRecorde
 
 describe(testName, function () {
     let basePageFunctions, loginPage;
-    let logger = loggerFactory(testName)
+    let logger = loggerFactory(testName);
 
     before(async function () {
         this.timeout(timeoutTest);
         logger.startLoggin(testName);
         basePageFunctions = new BasePageFunctions(logger);
         await basePageFunctions.launchBrowser();
-        loginPage = new LoginPage(logger, basePageFunctions.getPage())
-        await startRecording(await basePageFunctions.getPage(), testName);
+        loginPage = new LoginPage(logger, basePageFunctions.getPage());
+        await startRecording(await basePageFunctions.getPage(), testName, logger);
     });
 
     after(async function () {
         this.timeout(timeoutTest);
         await basePageFunctions.quit();
-        await stopRecording();
+        await stopRecording(logger);
         logger.endLoggin(testName);
     });
 
@@ -36,8 +36,8 @@ describe(testName, function () {
         const actualPageTitle = await basePageFunctions.isElementVisible(MainPageElements.PageTitle);
         const actualAllItems = await basePageFunctions.isElementVisible(MainPageElements.AllItems);
         const actualSortingBtn = await basePageFunctions.isElementVisible(MainPageElements.Sorting.SortingBtn);
-        assert.isTrue(actualPageTitle)
-        assert.isTrue(actualAllItems)
-        assert.isTrue(actualSortingBtn)
+        assert.isTrue(actualPageTitle);
+        assert.isTrue(actualAllItems);
+        assert.isTrue(actualSortingBtn);
     });
 });
