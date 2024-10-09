@@ -18,4 +18,4 @@ module.exports = {
     VisualAccount: {
         Username: "visual_user"
     },
-}
+};

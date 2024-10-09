@@ -7,4 +7,4 @@ module.exports = {
         ResetAppState: "#reset_sidebar_link",
         CartBtn: '#shopping_cart_container'
     }
-}
+};

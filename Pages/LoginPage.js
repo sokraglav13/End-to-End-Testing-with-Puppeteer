@@ -1,10 +1,10 @@
-const BasePageFunctions = require("./BasePageFunctions")
+const BasePageFunctions = require("./BasePageFunctions");
 const { LoginPageElements } = require("../WebElements/LoginPageElements");
-const { commandsTimeout } = require("../config")
+const { commandsTimeout } = require("../config");
 
 class LoginPage extends BasePageFunctions {
     constructor(logger, page) {
-        super(logger)
+        super(logger);
         this.page = page;
     }
 

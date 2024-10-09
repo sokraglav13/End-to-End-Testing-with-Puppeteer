@@ -3,4 +3,4 @@ module.exports = {
         CheckoutBtn: '#checkout',
         ContinueShopping: '#continue-shopping'
     }
-}
+};

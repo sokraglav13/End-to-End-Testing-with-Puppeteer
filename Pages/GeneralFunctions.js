@@ -1,11 +1,11 @@
-const BasePageFunctions = require("./BasePageFunctions")
-const { GeneralElements } = require("../WebElements/GeneralElements")
+const BasePageFunctions = require("./BasePageFunctions");
+const { GeneralElements } = require("../WebElements/GeneralElements");
 const { menuOption } = require("../Utils/Utils");
 const { commandsTimeout } = require("../config");
 
 class GeneralFunctions extends BasePageFunctions {
     constructor(logger, page) {
-        super(logger)
+        super(logger);
         this.page = page;
     }
 
@@ -58,4 +58,4 @@ class GeneralFunctions extends BasePageFunctions {
 }
 
 
-module.exports = GeneralFunctions
+module.exports = GeneralFunctions;

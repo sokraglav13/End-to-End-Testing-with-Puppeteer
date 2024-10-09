@@ -7,7 +7,7 @@ class BasePageFunctions {
         this.browser = null;
         this.page = null;
         this.recorder = null;
-        this.logger = logger
+        this.logger = logger;
     }
 
     /** This function initialize the page instance and launches the browser */
@@ -22,7 +22,7 @@ class BasePageFunctions {
                     }
                 }
             }));
-            this.browser = await puppeteer.launch(browserConfigurations)
+            this.browser = await puppeteer.launch(browserConfigurations);
             this.page = await this.browser.newPage();
             this.logger.info("Browser launched successfully");
         }
@@ -34,7 +34,7 @@ class BasePageFunctions {
     /** This function returns the instance of page */
     getPage() {
         try {
-            return this.page
+            return this.page;
         }
         catch (er) {
             this.logger.error(er);
@@ -88,8 +88,8 @@ class BasePageFunctions {
     async setFullscreen() {
         try {
             this.page.setViewport({
-                width: 1530,
-                height: 900,
+                width: 1920,
+                height: 1080,
             });
             this.logger.info("Fullscreen size set");
         }
@@ -130,7 +130,7 @@ class BasePageFunctions {
             this.logger.info("Clear the textfield");
             await this.page.waitForSelector(element, { timeout: commandsTimeout });
             const inputField = await this.page.$(element);
-            await inputField.click()
+            await inputField.click();
             await this.page.keyboard.down('Control');
             await this.page.keyboard.press('A');
             await this.page.keyboard.up('Control');
@@ -147,13 +147,13 @@ class BasePageFunctions {
      */
     async delay(time) {
         return new Promise(function (resolve) {
-            this.logger.info("Pausing the execution for ", time, "ms")
-            setTimeout(resolve, time)
+            this.logger.info("Pausing the execution for ", time, "ms");
+            setTimeout(resolve, time);
         });
     }
 
     async isElementVisible(element) {
-        const elementHandle = await this.page.$(element)
+        const elementHandle = await this.page.$(element);
         return await elementHandle.evaluate((element) => {
             const style = window.getComputedStyle(element);
             return style && style.display !== 'none' && style.visibility !== 'hidden' && style.opacity !== '0';

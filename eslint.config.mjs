@@ -13,7 +13,6 @@ export default [
         setTimeout: "readable",
         window: "readable",
         process: "readable",
-        console: "readable"
       }
     }
   },
@@ -21,6 +20,7 @@ export default [
   mochaPlugin.configs.flat.recommended,
   {
     rules: {
+      semi: "error",
       "mocha/no-exclusive-tests": "error",
       "mocha/no-skipped-tests": "warn",
       "mocha/no-mocha-arrows": "error",

@@ -1,11 +1,11 @@
 const BasePageFunctions = require("../Pages/BasePageFunctions");
 const { CheckoutPageElements } = require("../WebElements/CheckoutPageElements");
 const { getClearValue } = require("../Utils/Utils");
-const { commandsTimeout } = require("../config")
+const { commandsTimeout } = require("../config");
 
 class CheckoutPage extends BasePageFunctions {
     constructor(logger, page) {
-        super(logger)
+        super(logger);
         this.page = page;
     }
 
@@ -18,9 +18,9 @@ class CheckoutPage extends BasePageFunctions {
     async fillInformationForm(firstname, lastname, postalcode) {
         try {
             await this.page.waitForSelector(CheckoutPageElements.YourInformation.FirstnameField, { timeout: commandsTimeout });
-            await this.clearField(CheckoutPageElements.YourInformation.FirstnameField)
-            await this.clearField(CheckoutPageElements.YourInformation.LastnameField)
-            await this.clearField(CheckoutPageElements.YourInformation.ZipcodeField)
+            await this.clearField(CheckoutPageElements.YourInformation.FirstnameField);
+            await this.clearField(CheckoutPageElements.YourInformation.LastnameField);
+            await this.clearField(CheckoutPageElements.YourInformation.ZipcodeField);
             await this.page.type(CheckoutPageElements.YourInformation.FirstnameField, firstname);
             await this.page.type(CheckoutPageElements.YourInformation.LastnameField, lastname);
             await this.page.type(CheckoutPageElements.YourInformation.ZipcodeField, postalcode);
@@ -80,7 +80,7 @@ class CheckoutPage extends BasePageFunctions {
             await this.page.waitForSelector(CheckoutPageElements.Overview.PriceTotal, { timeout: commandsTimeout });
             const fullText = await this.page.$eval(CheckoutPageElements.Overview.PriceTotal, el => el.textContent);
             const clearValue = getClearValue(fullText);
-            return clearValue
+            return clearValue;
         }
         catch (er) {
             this.logger.error(er);
@@ -96,7 +96,7 @@ class CheckoutPage extends BasePageFunctions {
             await this.page.waitForSelector(CheckoutPageElements.Overview.TaxPrice, { timeout: commandsTimeout });
             const fullText = await this.page.$eval(CheckoutPageElements.Overview.TaxPrice, el => el.textContent);
             const clearValue = getClearValue(fullText);
-            return clearValue
+            return clearValue;
         }
         catch (er) {
             this.logger.error(er);
@@ -112,7 +112,7 @@ class CheckoutPage extends BasePageFunctions {
             await this.page.waitForSelector(CheckoutPageElements.Overview.TotalPriceIncludesTax, { timeout: commandsTimeout });
             const fullText = await this.page.$eval(CheckoutPageElements.Overview.TotalPriceIncludesTax, el => el.textContent);
             const clearValue = getClearValue(fullText);
-            return clearValue
+            return clearValue;
         }
         catch (er) {
             this.logger.error(er);
@@ -229,4 +229,4 @@ class CheckoutPage extends BasePageFunctions {
     }
 }
 
-module.exports = CheckoutPage
+module.exports = CheckoutPage;

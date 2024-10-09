@@ -5,7 +5,7 @@ const { commandsTimeout } = require("../config");
 
 class YourCartPage extends BasePageFunctions {
     constructor(logger, page) {
-        super(logger)
+        super(logger);
         this.page = page;
     }
 
@@ -36,4 +36,4 @@ class YourCartPage extends BasePageFunctions {
     }
 }
 
-module.exports = YourCartPage
+module.exports = YourCartPage;

@@ -10,4 +10,4 @@ module.exports = {
         PostalCode: "01010",
         EmptyString: ""
     },
-}
+};

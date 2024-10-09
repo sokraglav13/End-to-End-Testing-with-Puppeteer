@@ -1,11 +1,11 @@
 const BasePageFunctions = require("./BasePageFunctions");
 const { MainPageElements } = require("../WebElements/ProductsPageElements");
 const { findProductButton } = require("../Utils/Utils");
-const { commandsTimeout } = require("../config")
+const { commandsTimeout } = require("../config");
 
 class ProductsPage extends BasePageFunctions {
     constructor(logger, page) {
-        super(logger)
+        super(logger);
         this.page = page;
     }
 
@@ -68,7 +68,7 @@ class ProductsPage extends BasePageFunctions {
         try {
             await this.page.waitForSelector(MainPageElements.Sorting.SortingBtn, { timeout: commandsTimeout });
             await this.page.click(MainPageElements.Sorting.SortingBtn);
-            await this.page.select(MainPageElements.Sorting.SortingMethodsSelect, sortMethod)
+            await this.page.select(MainPageElements.Sorting.SortingMethodsSelect, sortMethod);
             this.logger.info(`Product list have beed sorted by ${sortMethod} method`);
         }
         catch (er) {
@@ -89,7 +89,7 @@ class ProductsPage extends BasePageFunctions {
      * "TestTshirt" */
     async clickProductTitle(productName) {
         try {
-            const productElements = findProductButton(productName)
+            const productElements = findProductButton(productName);
             await this.page.waitForSelector(productElements.Title, { timeout: commandsTimeout });
             await this.page.click(productElements.Title);
             this.logger.info(`Click on title for ${productName} Item`);
@@ -105,12 +105,12 @@ class ProductsPage extends BasePageFunctions {
         try {
             await this.page.waitForSelector(MainPageElements.AllItems, { timeout: commandsTimeout });
             const productElem = await this.page.$$(MainPageElements.AllItems);
-            let productArr = []
+            let productArr = [];
             for (let i = 1; i < productElem.length + 1; i++) {
                 productArr.push(await this.page.$eval(MainPageElements.ProductTitle(i), el => el.textContent));
             }
             this.logger.info(`Get & Return all products title`);
-            return productArr
+            return productArr;
         }
         catch (er) {
             this.logger.error(er);
@@ -123,12 +123,12 @@ class ProductsPage extends BasePageFunctions {
         try {
             await this.page.waitForSelector(MainPageElements.AllItems, { timeout: commandsTimeout });
             const productElem = await this.page.$$(MainPageElements.AllItems);
-            let productArr = []
+            let productArr = [];
             for (let i = 1; i < productElem.length + 1; i++) {
                 productArr.push(await this.page.$eval(MainPageElements.ProductPrice(i), el => el.textContent));
             }
             this.logger.info(`Get & Return all products prices`);
-            return productArr
+            return productArr;
         }
         catch (er) {
             this.logger.error(er);
@@ -153,9 +153,9 @@ class ProductsPage extends BasePageFunctions {
     async selectRandomProduct() {
         try {
             await this.page.waitForSelector(MainPageElements.AllItems, { timeout: commandsTimeout });
-            const allItems = await this.page.$$(MainPageElements.AllItems)
-            let Products = Object.entries(allItems)
-            const productSelection = Math.floor(Math.random() * Products.length) + 1
+            const allItems = await this.page.$$(MainPageElements.AllItems);
+            let Products = Object.entries(allItems);
+            const productSelection = Math.floor(Math.random() * Products.length) + 1;
             await this.page.click(MainPageElements.ProductsAddToCartButton(productSelection));
             this.logger.info("Click add to cart button for one random products");
         }
@@ -169,14 +169,14 @@ class ProductsPage extends BasePageFunctions {
     async selectTwoRandomProducts() {
         try {
             await this.page.waitForSelector(MainPageElements.AllItems, { timeout: commandsTimeout });
-            const allItems = await this.page.$$(MainPageElements.AllItems)
-            let Products = Object.entries(allItems)
-            const firstRandomProduct = Math.floor(Math.random() * Products.length)
-            const selectFirstProduct = Number(Products[firstRandomProduct][0]) + 1
+            const allItems = await this.page.$$(MainPageElements.AllItems);
+            let Products = Object.entries(allItems);
+            const firstRandomProduct = Math.floor(Math.random() * Products.length);
+            const selectFirstProduct = Number(Products[firstRandomProduct][0]) + 1;
             await this.page.click(MainPageElements.ProductsAddToCartButton(selectFirstProduct));
-            Products.splice([firstRandomProduct], 1)
-            const secondRandomProduct = Math.floor(Math.random() * Products.length)
-            const selectSecondProduct = Number(Products[secondRandomProduct][0]) + 1
+            Products.splice([firstRandomProduct], 1);
+            const secondRandomProduct = Math.floor(Math.random() * Products.length);
+            const selectSecondProduct = Number(Products[secondRandomProduct][0]) + 1;
             await this.page.click(MainPageElements.ProductsAddToCartButton(selectSecondProduct));
             this.logger.info("Click add to cart button for two random products");
         }

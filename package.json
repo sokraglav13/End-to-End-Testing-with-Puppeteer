@@ -4,7 +4,7 @@
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
-    "test": "mocha Tests/*.test.js --parallel",
+    "test": "mocha Tests/*.test.js",
     "lint": "eslint .",
     "test-reporter": "mocha --parallel Tests/*.test.js --reporter allure-mocha",
     "generate-report": "npx allure serve output/allure-results"

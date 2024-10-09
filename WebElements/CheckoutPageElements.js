@@ -9,9 +9,9 @@ module.exports = {
         Overview: {
             CartList: ".cart_list",
             CartItems: "::-p-xpath(//div[@class='cart_list']//div[@class='cart_item'])",
-            CartItemDescription: (itemNum) => { return `::-p-xpath(//div[@class='cart_list']//div[@class='cart_item'][${itemNum}]//div[@class='inventory_item_name'])` },
-            CartItemTitle: (itemNum) => { return `::-p-xpath(//div[@class='cart_list']//div[@class='cart_item'][${itemNum}]//div[@class='inventory_item_name'])` },
-            CartItemPrice: (itemNum) => { return `::-p-xpath(//div[@class='cart_list']//div[@class='cart_item'][${itemNum}]//div[@class='inventory_item_name'])` },
+            CartItemDescription: (itemNum) => { return `::-p-xpath(//div[@class='cart_list']//div[@class='cart_item'][${itemNum}]//div[@class='inventory_item_name'])`; },
+            CartItemTitle: (itemNum) => { return `::-p-xpath(//div[@class='cart_list']//div[@class='cart_item'][${itemNum}]//div[@class='inventory_item_name'])`; },
+            CartItemPrice: (itemNum) => { return `::-p-xpath(//div[@class='cart_list']//div[@class='cart_item'][${itemNum}]//div[@class='inventory_item_name'])`; },
             PriceTotal: '.summary_subtotal_label',
             TaxPrice: '.summary_tax_label',
             TotalPriceIncludesTax: '.summary_total_label'
@@ -25,4 +25,4 @@ module.exports = {
         Cancel: "#cancel",
         Finish: "#finish"
     }
-}
+};

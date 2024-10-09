@@ -12,4 +12,4 @@ module.exports = {
             TotalPriceIncludesTax: "$32.39"
         }
     }
-}
+};
