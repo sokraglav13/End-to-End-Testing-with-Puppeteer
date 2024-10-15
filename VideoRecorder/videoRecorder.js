@@ -1,6 +1,6 @@
 const { PuppeteerScreenRecorder } = require('puppeteer-screen-recorder');
-const Logger = require("../Logger/Logger");
-let recorder, logger;
+const isCI = process.env.CI === 'true';
+let recorder;
 
 const recorderConfigs = {
     followNewTab: true,
@@ -19,29 +19,30 @@ const recorderConfigs = {
     aspectRatio: '16:9',
 };
 
-const startRecording = async function (page, videoName) {
-    logger = new Logger();
-    try {
-        recorder = new PuppeteerScreenRecorder(page, recorderConfigs);
-        await recorder.start(`./TestExecutionVideos/${videoName}.mp4`);
-        logger.info("Recording Video has started");
+const startRecording = async function (page, testName, logger) {
+    if (!isCI) {
+        try {
+            recorder = new PuppeteerScreenRecorder(page, recorderConfigs);
+            await recorder.start(`./TestExecutionVideos/${testName}.mp4`);
+            logger.info("Recording Video has started");
+        }
+        catch (er) {
+            logger.error(er);
+            throw new Error(er);
+        }
     }
-    catch (er) {
-        logger.error(er);
-        throw new Error(er);
+};
+const stopRecording = async function (logger) {
+    if (!isCI) {
+        try {
+            await recorder.stop();
+            logger.info("Recording Video has stopped");
+        }
+        catch (er) {
+            logger.error(er);
+            throw new Error(er);
+        }
     }
+};
 
-}
-const stopRecording = async function () {
-    try {
-        await recorder.stop();
-        logger.info("Recording Video has stopped");
-    }
-    catch (er) {
-        logger.error(er);
-        throw new Error(er);
-    }
-}
-
-
-module.exports = { startRecording, stopRecording }
+module.exports = { startRecording, stopRecording };

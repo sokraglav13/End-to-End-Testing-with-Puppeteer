@@ -2,18 +2,15 @@ const { baseUrl, timeoutTest } = require("../config");
 const BasePageFunctions = require("../Pages/BasePageFunctions");
 const LoginPage = require("../Pages/LoginPage");
 const ProductsPage = require("../Pages/ProductsPage");
-const GeneralFunctions = require("../Pages/GeneralFunctions");
-const YourCartPage = require("../Pages/YourCartPage");
-const CheckoutPage = require("../Pages/CheckoutPage");
 const { NormalAccount, Password } = require("../TestData/Accounts");
-const { ExpectedResults, Firstname, Lastname, PostalCode } = require("../TestData/Test-2-Data").Test2Data;
+const { SortByMethod, ProductList } = require("../TestData/Test-5-Data").Test5Data;
 const loggerFactory = require("../Logger/Logger");
 const { assert } = require("chai");
-const testName = "Test-2";
+const testName = "Test-5";
 const { startRecording, stopRecording } = require("../VideoRecorder/videoRecorder");
 
 describe(testName, function () {
-    let basePageFunctions, loginPage, productsPage, generalFunctions, yourCartPage, checkoutPage;
+    let basePageFunctions, loginPage, productsPage;
     let logger = loggerFactory(testName);
 
     before(async function () {
@@ -23,9 +20,6 @@ describe(testName, function () {
         await basePageFunctions.launchBrowser();
         loginPage = new LoginPage(logger, basePageFunctions.getPage());
         productsPage = new ProductsPage(logger, basePageFunctions.getPage());
-        generalFunctions = new GeneralFunctions(logger, basePageFunctions.getPage());
-        yourCartPage = new YourCartPage(logger, basePageFunctions.getPage());
-        checkoutPage = new CheckoutPage(logger, basePageFunctions.getPage());
         await startRecording(await basePageFunctions.getPage(), testName, logger);
     });
 
@@ -36,20 +30,22 @@ describe(testName, function () {
         logger.endLoggin(testName);
     });
 
-    it("Complete Order - Two Random Products - Success", async function () {
+    it("Sorting - By Name & Price - Success", async function () {
         this.timeout(timeoutTest);
         await basePageFunctions.openUrl(baseUrl);
         await basePageFunctions.setFullscreen();
         await loginPage.login(NormalAccount.Username, Password);
-        await productsPage.selectTwoRandomProducts();
-        await generalFunctions.clickCart();
-        await yourCartPage.pressCheckout();
-        await checkoutPage.fillInformationForm(Firstname, Lastname, PostalCode);
-        await checkoutPage.pressContinue();
-        await checkoutPage.pressFinish();
-        const ActualOrderTitle = await checkoutPage.getCompleteTitle();
-        const ActualOrderDescription = await checkoutPage.getCompleteDescription();
-        assert.equal(ActualOrderTitle, ExpectedResults.OrderTitle);
-        assert.equal(ActualOrderDescription, ExpectedResults.OrderDescription);
+        await productsPage.sortProductsBy(SortByMethod.NameAZ);
+        const actaulProductSortedByNameAZ = await productsPage.getAllProductTitles();
+        await productsPage.sortProductsBy(SortByMethod.NameZA);
+        const actaulProductSortedByNameZA = await productsPage.getAllProductTitles();
+        await productsPage.sortProductsBy(SortByMethod.PriceLoHi);
+        const actaulProductSortedByPriceLoHi = await productsPage.getAllProductPrices();
+        await productsPage.sortProductsBy(SortByMethod.PriceHiLo);
+        const actaulProductSortedByPriceHiLo = await productsPage.getAllProductPrices();
+        assert.deepEqual(actaulProductSortedByNameAZ, ProductList.SortedByNameAZ);
+        assert.deepEqual(actaulProductSortedByNameZA, ProductList.SortedByNameZA);
+        assert.deepEqual(actaulProductSortedByPriceLoHi, ProductList.SortedByPriceLoHi);
+        assert.deepEqual(actaulProductSortedByPriceHiLo, ProductList.SortedByPriceHiLo);
     });
 });

@@ -1,19 +1,19 @@
 const { baseUrl, timeoutTest } = require("../config");
 const BasePageFunctions = require("../Pages/BasePageFunctions");
 const LoginPage = require("../Pages/LoginPage");
-const ProductsPage = require("../Pages/ProductsPage");
 const GeneralFunctions = require("../Pages/GeneralFunctions");
+const ProductsPage = require("../Pages/ProductsPage");
 const YourCartPage = require("../Pages/YourCartPage");
 const CheckoutPage = require("../Pages/CheckoutPage");
 const { NormalAccount, Password } = require("../TestData/Accounts");
-const { ExpectedResults, Firstname, Lastname, PostalCode } = require("../TestData/Test-2-Data").Test2Data;
+const { FormInfo, ExpectedResults } = require("../TestData/Test-7-Data").Test7Data;
 const loggerFactory = require("../Logger/Logger");
 const { assert } = require("chai");
-const testName = "Test-2";
+const testName = "Test-7";
 const { startRecording, stopRecording } = require("../VideoRecorder/videoRecorder");
 
 describe(testName, function () {
-    let basePageFunctions, loginPage, productsPage, generalFunctions, yourCartPage, checkoutPage;
+    let basePageFunctions, loginPage, generalFunctions, yourCartPage, checkoutPage, productsPage;
     let logger = loggerFactory(testName);
 
     before(async function () {
@@ -22,8 +22,8 @@ describe(testName, function () {
         basePageFunctions = new BasePageFunctions(logger);
         await basePageFunctions.launchBrowser();
         loginPage = new LoginPage(logger, basePageFunctions.getPage());
-        productsPage = new ProductsPage(logger, basePageFunctions.getPage());
         generalFunctions = new GeneralFunctions(logger, basePageFunctions.getPage());
+        productsPage = new ProductsPage(logger, basePageFunctions.getPage());
         yourCartPage = new YourCartPage(logger, basePageFunctions.getPage());
         checkoutPage = new CheckoutPage(logger, basePageFunctions.getPage());
         await startRecording(await basePageFunctions.getPage(), testName, logger);
@@ -36,7 +36,7 @@ describe(testName, function () {
         logger.endLoggin(testName);
     });
 
-    it("Complete Order - Two Random Products - Success", async function () {
+    it("Check Complete Order Elements - Valid Order - Success", async function () {
         this.timeout(timeoutTest);
         await basePageFunctions.openUrl(baseUrl);
         await basePageFunctions.setFullscreen();
@@ -44,12 +44,12 @@ describe(testName, function () {
         await productsPage.selectTwoRandomProducts();
         await generalFunctions.clickCart();
         await yourCartPage.pressCheckout();
-        await checkoutPage.fillInformationForm(Firstname, Lastname, PostalCode);
+        await checkoutPage.fillInformationForm(FormInfo.Firstname, FormInfo.Lastname, FormInfo.PostalCode);
         await checkoutPage.pressContinue();
         await checkoutPage.pressFinish();
-        const ActualOrderTitle = await checkoutPage.getCompleteTitle();
-        const ActualOrderDescription = await checkoutPage.getCompleteDescription();
-        assert.equal(ActualOrderTitle, ExpectedResults.OrderTitle);
-        assert.equal(ActualOrderDescription, ExpectedResults.OrderDescription);
+        const actualTitle = await checkoutPage.getCompleteTitle();
+        const actualDescription = await checkoutPage.getCompleteDescription();
+        assert.equal(actualTitle, ExpectedResults.Title);
+        assert.equal(actualDescription, ExpectedResults.Description);
     });
-});
+}); 

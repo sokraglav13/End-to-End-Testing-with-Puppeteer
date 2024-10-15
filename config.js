@@ -10,12 +10,13 @@ module.exports = {
 
     /**Sets the browser options */
     browserConfigurations: {
-        executablePath: 'C:/testBrowsers/Chrome_V119.0.6045.105/chrome.exe',
-        headless: false,
+        headless: true,
         slowMo: 20,
         args: [
             '--start-fullscreen',
             '--disable-notifications',
-        ]
+            '--no-sandbox',
+            '--disable-setuid-sandbox'
+        ],
     }
-}
+};
