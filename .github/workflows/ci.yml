@@ -3,12 +3,10 @@ name: CI Pipeline
 on:
   push:
     branches:
-      - improvements
       - main
   pull_request:
     branches:
       - main
-      - improvements
 
 jobs:
   linting:
