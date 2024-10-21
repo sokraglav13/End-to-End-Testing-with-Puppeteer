@@ -4,7 +4,9 @@ import mochaPlugin from 'eslint-plugin-mocha';
 
 export default [
   { files: ["**/*.js"], languageOptions: { sourceType: "commonjs" } },
-
+  {
+    ignores: ["node_modules", ".vscode"]
+  },
   {
     languageOptions:
     {
