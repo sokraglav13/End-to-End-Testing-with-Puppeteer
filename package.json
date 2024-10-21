@@ -14,20 +14,20 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "puppeteer": "^23.0.2",
+    "puppeteer": "^23.6.0",
     "puppeteer-extra": "^3.3.6",
     "puppeteer-extra-plugin-user-preferences": "^2.4.1",
-    "puppeteer-screen-recorder": "^3.0.3",
-    "winston": "^3.14.1"
+    "puppeteer-screen-recorder": "^3.0.5",
+    "winston": "^3.15.0"
   },
   "devDependencies": {
     "@eslint/js": "^8.57.1",
     "allure-commandline": "^2.30.0",
-    "allure-mocha": "^3.0.4",
+    "allure-mocha": "^3.0.5",
     "chai": "^4.4.1",
     "eslint": "^8.57.1",
     "eslint-plugin-mocha": "^10.5.0",
-    "globals": "^15.9.0",
+    "globals": "^15.11.0",
     "mocha": "^10.7.3"
   }
 }
